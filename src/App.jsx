@@ -1,11 +1,16 @@
-import { useState } from 'react'
 import './App.css'
-
+import {header} from "./assets/locales/en.json"
 function App() {
-  const [count, setCount] = useState(0)
-
+  
+  console.log(header.home)
   return (
     <>
+    <header>
+    {header.home}
+    {header.projects}
+    {header.about}
+    {header.contacts}
+    </header>
       
     </>
   )
