@@ -24,13 +24,7 @@ header.innerHeader {
 }
 
 .media_icon {
+  position: left 2rem;
   height: 50px;
   width: 50px;
-  background-color: green;
-}
-
-.media_icon_false {
-  height: 50px;
-  width: 50px;
-  background-color: red;
 }

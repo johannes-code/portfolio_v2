@@ -1,25 +1,28 @@
 import styles from "./header.module.css";
 
 export const MediaHeader = () => {
-  const isTrue = true;
-  //   const language = "no";
+
   return (
     <>
       <div className="media_header absolute left-8 top-0">
         <div className="media_line h-50 w-[1px] bg-white" />
-        {/* img * 3 for the icons: */}
+        
         <img
-          className={styles.media_icon}
+          className="media_icon absolute left-8 h-50 w-50 top-34"
           src="/src/images/icons/discord.svg"
-          alt=""
+          alt="discordicon"
         />
         <img
-          className={isTrue ? styles.media_icon : styles.media_icon_false}
-          src="/src/images/icons/discord.svg"
-          alt=""
+          className="media_icon absolute left-8 h-50 w-50 top-46"
+          src="/src/images/icons/github.svg"
+          alt="githubicon"
         />
-        <img className="media_icon" src="" alt="" />
-        {/* <p>{language === "en" ? "English text" : "Norsk tekst"}</p> */}
+        <img 
+        className="media_icon absolute left-8 h-50 w-50 top-54" 
+        src="/src/images/icons/email.svg" 
+        alt="emailicon" 
+        />
+        
       </div>
     </>
   );
