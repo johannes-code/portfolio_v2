@@ -1,6 +1,26 @@
 .header {
   position: relative;
-  /* background-color: greenyellow; */
+  padding-top: 32px;
+  padding-bottom: 8px;
+  position: fixed;
+}
+.container {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoImage {
+  width: 16px;
+  height: 24px;
+}
+
+header.innerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  position: relative;
 }
 
 .media_header {
