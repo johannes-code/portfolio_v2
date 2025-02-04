@@ -2,7 +2,6 @@
   position: relative;
   padding-top: 32px;
   padding-bottom: 8px;
-  position: fixed;
 }
 .container {
   width: 100vw;
@@ -16,15 +15,11 @@
 }
 
 header.innerHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  position: relative;
 }
 
 .media_header {
 }
+
 .media_line {
 }
 
