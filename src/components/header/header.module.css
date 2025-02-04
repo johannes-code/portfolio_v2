@@ -1,0 +1,21 @@
+.header {
+  position: relative;
+  /* background-color: greenyellow; */
+}
+
+.media_header {
+}
+.media_line {
+}
+
+.media_icon {
+  height: 50px;
+  width: 50px;
+  background-color: green;
+}
+
+.media_icon_false {
+  height: 50px;
+  width: 50px;
+  background-color: red;
+}
