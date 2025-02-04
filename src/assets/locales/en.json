@@ -187,4 +187,5 @@
         "tool": ["VScode", "Nano", "Vim", "GitHub"],
         "framework": ["Next"]
     }
+
 }
