@@ -4,23 +4,22 @@
   padding-bottom: 8px;
 }
 .container {
-  width: 100vw;
+  display: flex;
+  justify-content: end;
+}
+
+header.innerHeader {
   display: flex;
   flex-direction: row;
 }
 
+header ul.navItems {
+  display: flex;
+}
+
 .logoImage {
-  width: 16px;
+  width: 24px;
   height: 24px;
-}
-
-header.innerHeader {
-}
-
-.media_header {
-}
-
-.media_line {
 }
 
 .media_icon {
