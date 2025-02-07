@@ -1,0 +1,56 @@
+.quote {
+  border: 1px solid;
+  border-color: var(--gray);
+  position: relative;
+  margin: 0;
+}
+
+.quote::before {
+  top: -32px;
+  left: 16px;
+  content: '"';
+  position: relative;
+  font-size: 64px;
+  font-weight: 700;
+  background-image: linear-gradient(var(--background) var(--background));
+  background-size: 100% 40%;
+  background-repeat: no-repeat;
+}
+
+.quote::after {
+  bottom: -64px;
+  right: 16px;
+  content: '"';
+  position: absolute;
+  color: var(--gray);
+  font-size: 64px;
+  font-weight: 700;
+  background-image: linear-gradient(var(--background), var(--background));
+  background-size: 100% 40%;
+  background-repeat: no-repeat;
+}
+
+.quote_text {
+  padding: 32px;
+  font-size: 24px;
+  font-weight: 500px;
+  background-color: var(--background);
+}
+
+.quote_author {
+  position: absolute;
+  color: var(--gray);
+  border: 1px solid;
+  border-color: var(--gray);
+  padding: 8px;
+  right: -1px;
+  font-size: 16px;
+}
+.quote_author::before {
+  content: "- ";
+}
+
+figcaption {
+  display: block;
+  unicode-bidi: isolate;
+}
