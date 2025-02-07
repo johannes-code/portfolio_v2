@@ -1,17 +1,21 @@
+import data from "/src/locales/en.json";
+
 export const Hero = () => {
+  const heroData = data.pages.home.hero;
+
   return (
     <section className="hero">
-      <div className="hero_section">
-        <h1 className="hero_title"></h1>
-        <div className="hero_description"></div>
-        {/* <a className button button_primary href="#contacts">
-          Contact ME
-        </a> */}
-      </div>
-      <div className="hero_illustrations">
-        <img src="/logo-outline.svg" alt="" className="hero_logo" />
-        <img src="/hero.png" alt="Johannes" className="hero_image" />
-        <div className="hero_status">::before "open for new opportunities"</div>
+      <div className="hero-section">
+        <h1 dangerouslySetInnerHTML={{ __html: heroData.title }}></h1>
+        <div className="hero-description">{heroData.description}</div>
+        <a className="button button-primary" href="#contacts">
+          {heroData.button}
+        </a>
+        <div className="hero-illustrations">
+          <img src="/logo-outline.svg" alt="" className="hero-logo" />
+          <img src="/hero.png" alt="Johannes" className="hero-image" />
+          <div className="hero-status">{heroData.status}</div>
+        </div>
       </div>
     </section>
   );
