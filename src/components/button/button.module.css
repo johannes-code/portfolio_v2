@@ -1,11 +1,9 @@
-.button_button_primary {
+._button_button_primary {
   display: inline-block;
   padding: 8px 16px;
-  border: 1px solid var(--primary);
-  font-weight: 500px;
-}
-
-.button_button_primary .a {
+  border: 1px solid;
+  border-color: var(--primary);
+  font-weight: 500;
   text-decoration: none;
   color: inherit;
 }

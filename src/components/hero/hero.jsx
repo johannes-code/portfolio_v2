@@ -12,7 +12,7 @@ export const Hero = () => {
           dangerouslySetInnerHTML={{ __html: heroData.title }}
         ></h1>
         <div className={styles.hero_description}>{heroData.description}</div>
-        <a className={button.button_button_primary} href="#contacts">
+        <a className={button._button_button_primary} href="#contacts">
           {heroData.button}
         </a>
         <div className={styles.hero_illustrations}>
