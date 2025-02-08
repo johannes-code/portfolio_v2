@@ -1,12 +1,12 @@
-.quote {
+.quote .quote {
   border: 1px solid;
   border-color: var(--gray);
   position: relative;
   margin: 0;
 }
 
-.quote::before,
-::after {
+.quote .quote::before,
+.quote .quote::after {
   content: '"';
   position: absolute;
   color: var(--gray);
@@ -16,23 +16,23 @@
   background-size: 100% 40%;
   background-repeat: no-repeat;
 }
-.quote::before {
+.quote .quote::before {
   top: -32px;
   left: 16px;
 }
-.quote::after {
+.quote .quote::after {
   bottom: -64px;
   right: 16px;
 }
 
-.quote_text {
+.quote .quote_text {
   padding: 32px;
   font-size: 24px;
   font-weight: 500;
   background-color: var(--background);
 }
 
-.quote_author {
+.quote .quote_author {
   position: absolute;
   color: var(--gray);
   border: 1px solid;
@@ -41,11 +41,11 @@
   right: -1px;
   font-size: 16px;
 }
-.quote_author::before {
+.quote .quote_author::before {
   content: "- ";
 }
 
-figcaption {
+.quote figcaption {
   display: block;
   unicode-bidi: isolate;
 }

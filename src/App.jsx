@@ -1,15 +1,17 @@
 import "./App.css";
 import { Header } from "./components/header/header";
 import { Hero } from "./components/hero/hero";
-import { Qoute } from "./components/quote/Quote";
+import { Quote } from "./components/quote/Quote";
 
 function App() {
   // console.log(header.home)
   return (
     <>
       <Header />
-      <Hero />
-      <Qoute />
+      <div className="container_content">
+        <Hero />
+        <Quote />
+      </div>
     </>
   );
 }
