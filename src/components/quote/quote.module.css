@@ -1,12 +1,12 @@
-.quote .quote {
+.quote {
   border: 1px solid;
   border-color: var(--gray);
   position: relative;
   margin: 0;
 }
 
-.quote .quote::before,
-.quote .quote::after {
+.quote::before,
+.quote::after {
   content: '"';
   position: absolute;
   color: var(--gray);
@@ -20,7 +20,7 @@
   top: -32px;
   left: 16px;
 }
-.quote .quote::after {
+.quote::after {
   bottom: -64px;
   right: 16px;
 }
@@ -41,7 +41,7 @@
   right: -1px;
   font-size: 16px;
 }
-.quote .quote_author::before {
+.quote_author::before {
   content: "- ";
 }
 
