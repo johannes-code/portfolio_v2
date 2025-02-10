@@ -143,21 +143,30 @@
       "tech": ["programming.5", "other.0,1,4,5","tool.0,3"],
       "description": "This portfolio",
       "link": "https://www.example.com/prosjekt1",
-      "screenshot": "./no_image.jpg"
+      "screenshot": "./no_image.jpg",
+      "Learned":"From this project I learned (min 3 takeaways",
+      "Missed": "What did i miss to do on this project",
+      "Why": "What is the main purpose with this project"
     },
     {
       "name": "project 2",
       "tech": ["Tek 3", "Tek 4"],
       "description": "Short descriiption of project 2.",
       "link": "https://www.example.com/prosjekt2",
-      "screenshot": "./no_image.jpg"
+      "screenshot": "./no_image.jpg",
+      "Learned":"From this project I learned (min 3 takeaways",
+      "Missed": "What did i miss to do on this project",
+      "Why": "What is the main purpose with this project"
     },
     {
       "name": "project 3",
       "tech": ["Tek 3", "Tek 4"],
       "description": "Short descriiption of project 2.",
       "link": "https://www.example.com/prosjekt2",
-      "screenshot": "./no_image.jpg"
+      "screenshot": "./no_image.jpg",
+      "Learned":"From this project I learned (min 3 takeaways",
+      "Missed": "What did i miss to do on this project",
+      "Why": "What is the main purpose with this project"
     }
   ],
   "skill": {
