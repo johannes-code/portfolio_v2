@@ -16,23 +16,22 @@
   background-size: 100% 40%;
   background-repeat: no-repeat;
 }
-.quote .quote::before {
+.quote::before {
   top: -32px;
-  left: 16px;
 }
 .quote::after {
-  bottom: -64px;
-  right: 16px;
+  bottom: -44px;
+  right: 10px;
 }
 
-.quote .quote_text {
+.quote_text {
   padding: 32px;
   font-size: 24px;
   font-weight: 500;
   background-color: var(--background);
 }
 
-.quote .quote_author {
+.quote_author {
   position: absolute;
   color: var(--gray);
   border: 1px solid;

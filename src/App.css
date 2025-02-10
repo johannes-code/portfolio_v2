@@ -1,11 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
 @import "tailwindcss";
+
+
 * {
   margin: 0px;
   box-sizing: border-box;
 }
 
 @theme {
-  --font-display: "Fira Code", monospace;
+  --font-fira: "Fira Code", monospace;
 
   --primary: hsl(287 60% 65%);
   --primary-op: hsl(287 60% 65% / 0.1);
@@ -14,13 +17,14 @@
   --background: hsl(218 12% 18%);
   --white: hsl(0 0% 100%);
 
-  --breakpoint_esktopScreen: 1024px;
+  --breakpoint_desktopScreen: 1024px;
   --breakpoint_tabletScreen: 768px;
   --breakpoint_mobileScreen: 500px;
 }
 
 body {
   background-color: var(--background);
+  
 }
 
 .container_content {
