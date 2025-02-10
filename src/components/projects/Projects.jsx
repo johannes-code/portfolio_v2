@@ -1,6 +1,7 @@
 import React from 'react';
 import data from "/src/locales/en.json";
 import styles from "./projects.module.css";
+import button from "../button/button.module.css";
 
 export const Projects = () => {
     const projectPageData = data.pages.home.projects;
@@ -65,7 +66,7 @@ export const Projects = () => {
                         <p>{project.description}</p>
 
                         {/* 5. Button/Link */}
-                        <a href={project.link} className={styles.project_button}>View Project</a>
+                        <a href={project.link} className={button._button_button_primary}>View Project</a>
                     </div>
                 ))}
             </div>
