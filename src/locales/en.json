@@ -139,10 +139,11 @@
 
   "projectsExpanded": [
     {
-      "name": "project 1",
-      "tech": ["Tek 1", "Tek 2"],
-      "description": "short description of project 1.",
-      "link": "https://www.example.com/prosjekt1"
+      "name": "portfolio",
+      "tech": ["programming.5", "other.0,1,4,5","tool.0,3"],
+      "description": "This portfolio",
+      "link": "https://www.example.com/prosjekt1",
+      "screenshot": "./no_image.jpg"
     },
     {
       "name": "project 2",
@@ -151,6 +152,13 @@
       "link": "https://www.example.com/prosjekt2"
     }
   ],
+  "skill": {
+    "programming": ["Python", "C", "C#", "C++", "Java", "JavaScript"],
+    "database": ["mySQL"],
+    "other": ["Html", "Css", "Sass", "Scss", "Tailwind", "React"],
+    "tool": ["VScode", "Nano", "Vim", "GitHub"],
+    "framework": ["Next.js"]
+  },
 
   "contactinfo": {
     "name": "Johannes Ryvænge Gjeset",
@@ -173,13 +181,7 @@
     "linkedin": "./public/assets/images/icons/linkedin.svg",
     "telegram": "./public/assets/images/icons/telegram.svg",
     "twitter": "./public/assets/images/icons/twitter.svg"
-  },
-
-  "skill": {
-    "programming": ["Python", "C", "C#", "C++", "Java", "JavaScript"],
-    "database": ["mySQL"],
-    "other": ["Html", "Css", "Sass", "Scss"],
-    "tool": ["VScode", "Nano", "Vim", "GitHub"],
-    "framework": ["Next"]
   }
+
+  
 }
