@@ -149,7 +149,15 @@
       "name": "project 2",
       "tech": ["Tek 3", "Tek 4"],
       "description": "Short descriiption of project 2.",
-      "link": "https://www.example.com/prosjekt2"
+      "link": "https://www.example.com/prosjekt2",
+      "screenshot": "./no_image.jpg"
+    },
+    {
+      "name": "project 3",
+      "tech": ["Tek 3", "Tek 4"],
+      "description": "Short descriiption of project 2.",
+      "link": "https://www.example.com/prosjekt2",
+      "screenshot": "./no_image.jpg"
     }
   ],
   "skill": {
