@@ -14,7 +14,7 @@ export const Contact = () => {
           >
             <div className={styles.contact_name}></div>
           </a>
-          <a href="mailto:johannes@gjeset.no" className="contact"></a>
+          <a href="" className="contact"></a>
         </div>
       </div>
     </section>
