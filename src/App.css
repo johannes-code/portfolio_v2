@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
 @import "tailwindcss";
 
-
 * {
   margin: 0px;
   box-sizing: border-box;
@@ -24,11 +23,13 @@
 
 body {
   background-color: var(--background);
-  
+  font-family: var(--font-fira);
+  color: var(--white);
 }
 
 .container_content {
   max-width: 1024px;
+  gap: 112px;
   margin: 0 auto;
   position: relative;
 }

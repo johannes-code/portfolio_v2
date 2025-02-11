@@ -4,6 +4,10 @@
   font-weight: 600px;
 }
 
+.hero_title span {
+  color: var(--primary);
+}
+
 .hero_description {
   color: var(--gray);
   margin-top: 32px;
