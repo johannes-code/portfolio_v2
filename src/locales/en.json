@@ -74,12 +74,11 @@
       "inProgress": "unfinished"
     },
     "about": {
-      "description": "Who am I",
-      "about": {
-        "description": [
-          "Computers and tech has been one of my interests since I was about 11years old.",
-          "However the last 4-5years ive focused more and more of my time on this interest, because I want to do this for a living.",
-          "My passion is both whats going on in the background, and what the costumer sees."
+      "head": "Who am I",
+      "description": [
+         "Computers and tech has been one of my interests since I was about 11years old.",
+         "However the last 4-5years ive focused more and more of my time on this interest, because I want to do this for a living.",
+         "My passion is both whats going on in the background, and what the costumer sees."
         ]
       },
       "skills": {
@@ -95,12 +94,8 @@
           "I love 80's car movies"
         ]
       }
+  
     },
-    "contacts": {
-      "description": "How to contact me"
-    }
-  },
-
   "quotes": {
     "Dr_who": {
       "text": "With great power comes great electricity bill",
@@ -199,6 +194,7 @@
     "telegram": "./public/assets/images/icons/telegram.svg",
     "twitter": "./public/assets/images/icons/twitter.svg"
   }
+}
 
   
-}
+

@@ -3,7 +3,6 @@ import styles from "./header.module.css";
 import { MediaHeader } from "./MediaHeader";
 
 export const Header = () => {
-  console.log(data);
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -18,7 +17,7 @@ export const Header = () => {
           </ul>
         </div>
       </div>
-      {/* Create minor components if you want */}
+
       <MediaHeader />
     </header>
   );
