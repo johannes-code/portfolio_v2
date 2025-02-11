@@ -12,7 +12,7 @@
 }
 
 .h2::before {
-  content: "#";
+  content: "# ";
   color: var(--primary);
 }
 
@@ -24,7 +24,7 @@
   background-color: var(--primary);
   position: absolute;
   transform: translate(100% 50%);
-  right: -16px;
+  left: 130px;
   top: 50%;
 }
 
@@ -51,8 +51,6 @@
 }
 
 .skill-block {
-  border: 1px solid;
-  border-color: var(--gray);
   display: inline-block;
   max-width: 300px;
   min-width: 200px;
@@ -61,7 +59,9 @@
 .skill_block_name {
   font-weight: 600;
   padding: 8px;
-  border-bottom: 1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-top: 1px solid;
   border-color: var(--gray);
 }
 
@@ -73,6 +73,8 @@
   justify-content: start;
   align-items: start;
   color: var(--gray);
+  border: 1px solid;
+  border-color: var(--gray);
 }
 
 ul {
