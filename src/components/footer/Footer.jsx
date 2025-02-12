@@ -11,11 +11,7 @@ export const Footer = () => {
           <div className={styles.footer_info}>
             <div className={styles.footer_header}>
               <div className={styles.logo}>
-                <img
-                  src={styles.src}
-                  alt={styles.alt}
-                  className={styles.logo_img}
-                />
+                <img className={styles.logoImage} src="/logo.svg" alt="logo" />
                 <div className={styles.logo_name}></div>
               </div>
               <a
