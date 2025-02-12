@@ -1,16 +1,19 @@
 .header {
-  position: relative;
+  position: right;
+
   padding-top: 32px;
   padding-bottom: 8px;
 }
 .container {
-  display: flex;
-  justify-content: end;
+  /* display: flex; */
+  /* justify-content: center; */
 }
 
 header.innerHeader {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  /* grid-template-columns: 1fr 1fr; */
+  /* flex-direction: column; */
+  justify-content: center;
 }
 
 header ul.navItems {
@@ -20,6 +23,7 @@ header ul.navItems {
 .logoImage {
   width: 24px;
   height: 24px;
+  /* display: block; */
 }
 
 .media_icon {
