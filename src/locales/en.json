@@ -131,39 +131,155 @@
       "author": "Albert Einstein"
     }
   },
-
   "projectsExpanded": [
-    {
-      "name": "portfolio",
-      "tech": ["programming.5", "other.0,1,4,5","tool.0,3"],
-      "description": "This portfolio",
-      "link": "https://www.example.com/prosjekt1",
-      "screenshot": "./no_image.jpg",
-      "Learned":"From this project I learned (min 3 takeaways",
-      "Missed": "What did i miss to do on this project",
-      "Why": "What is the main purpose with this project"
-    },
-    {
-      "name": "project 2",
-      "tech": ["Tek 3", "Tek 4"],
-      "description": "Short descriiption of project 2.",
-      "link": "https://www.example.com/prosjekt2",
-      "screenshot": "./no_image.jpg",
-      "Learned":"From this project I learned (min 3 takeaways",
-      "Missed": "What did i miss to do on this project",
-      "Why": "What is the main purpose with this project"
-    },
-    {
-      "name": "project 3",
-      "tech": ["Tek 3", "Tek 4"],
-      "description": "Short descriiption of project 2.",
-      "link": "https://www.example.com/prosjekt2",
-      "screenshot": "./no_image.jpg",
-      "Learned":"From this project I learned (min 3 takeaways",
-      "Missed": "What did i miss to do on this project",
-      "Why": "What is the main purpose with this project"
-    }
-  ],
+      {
+        "name": "portfolio",
+        "tech": ["programming.5", "other.0,1,4,5", "tool.0,3"],
+        "description": "Personal portfolio",
+        "link": "https://github.com/johannes-code/portfolio_v2",
+        "screenshot": "../../public/screenshots/portfolio.png",
+        "long_desc": [
+          {
+            "heading": "Background",
+            "content": "This is my first portfolio project, undertaken with little prior experience."
+          },
+          {
+            "heading": "Inspiration",
+            "content": "The design is heavily inspired by eliasdevis.github.io."
+          },
+          {
+            "heading": "Version",
+            "content": "This is the second version, it is completely rewritten in React for improved performance and maintainability."
+          }
+        ],
+        "learned": [
+          {
+            "heading": "Challenges",
+            "content": "Converting from HTML to React required a significant shift in mindset, I also chose to go with regular css instead of sass, which it originally was written in"
+          },
+          {
+            "heading": "Key Takeaways",
+            "content": "I learned about component structure, data flow, and the importance of planning, using react also helped me in understanding to work component by component"
+          }
+        ],
+        "missed": [
+          {
+            "heading": "Testing",
+            "content": "I often worte too big chuncks of code, before testing, just to find out that something wasnt working"
+          },
+          {
+            "heading": "Responsive Design",
+            "content": "More attention should have been paid to responsive design during the process to ensure compatibility across devices."
+          }
+        ],
+        "why": [
+          {
+            "heading": "Purpose",
+            "content": "To create a professional online presence showcasing my skills and projects while expanding my skillset, and push myself to learn more"
+          },
+          {
+            "heading": "Learning Goals",
+            "content": "To gain practical experience with React development and deployment."
+          }
+        ]
+      },
+      {
+        "name": "next_planets",
+        "tech": ["programming.5", "other.0,1,4,5", "tool.0,3","framework.0"],
+        "description": "Using internal database and display data in next.js",
+        "link": "https://github.com/johannes-code/next_planets",
+        "screenshot": "../../public/screenshots/next_planets.png",
+        "long_desc": [
+          {
+            "heading": "Background",
+            "content": "First project with next.js, the task was to render dynamic data from an imaginary database"
+          },
+          {
+            "heading": "Inspiration",
+            "content": "All the objects in this assignment is pure fantasy"
+          },
+          {
+            "heading": "Version",
+            "content": "This is the final version of this project"
+          }
+        ],
+        "learned": [
+          {
+            "heading": "Challenges",
+            "content": "Know when to stop, my fantasy projects has a tendency to go waaay out of hand, other challenges was to render the data as I wanted"
+          },
+          {
+            "heading": "Key Takeaways",
+            "content": "For me this project was time sensetive, I wanted to make something I could stand by, I could have done It more easy, but for me its important to learn, not just taking the easy way"
+          }
+        ],
+        "missed": [
+          {
+            "heading": "Time",
+            "content": "I would have liked to have more time on this project, yet i feel like I completed the task"
+          }
+          
+        ],
+        "why": [
+          {
+            "heading": "Purpose",
+            "content": "This project was about getting to know next.js, to see how it can be used, and how it can get information from an external database"
+          },
+          {
+            "heading": "Learning Goals",
+            "content": "To gain practical experience with next.js development and deployment."
+          }
+        ]
+      },
+      {
+        "name": "Companyinformation",
+        "tech": ["programming.5", "other.0,1,5","tool.0,3"],
+        "description": "Group project API to find company information",
+        "link": "https://github.com/johannes-code/companyInformation",
+        "screenshot": "../../public/screenshots/companyInformation.png",
+        "long_desc": [
+          {
+            "heading": "Background",
+            "content": "This was the first group-assignment, we where supposed to work together in React"
+          },
+        
+          {
+            "heading": "Version",
+            "content": "This is the last version, and the final version"
+          }
+        ],
+        "learned": [
+          {
+            "heading": "Challenges",
+            "content": "This project was supposed to be a 2 person group task, I ended up doing it alone, because the other person of the team didnt meet up, I still tried to simulate being in a team, working with branches, etc"
+          },
+          {
+            "heading": "Key Takeaways",
+            "content": "I liked this project, it was enjoyable to make the data render, and to get the search function to work as intended "
+          }
+        ],
+        "missed": [
+          {
+            "heading": "Testing",
+            "content": "I went through a lot of testing, and at one point I found that the search function didnt work as intended"
+          },
+          {
+            "heading": "Responsive Design",
+            "content": "I have not implented responsive design on this project"
+          }
+        ],
+        "why": [
+          {
+            "heading": "Purpose",
+            "content": "The purpose of this project was to work together in a team, that didnt work out, but I did the best I could, and I used people around me to ask for things, and to get input on my solutions"
+          },
+          {
+            "heading": "Learning Goals",
+            "content": "To gain practical experience with React development and deployment, and to learn how to work in team"
+          }
+        ]
+      }
+    ],
   "skill": {
     "programming": ["Python", "C", "C#", "C++", "Java", "JavaScript"],
     "database": ["mySQL"],
@@ -171,7 +287,6 @@
     "tool": ["VScode", "Nano", "Vim", "GitHub"],
     "framework": ["Next.js"]
   },
-
   "contactinfo": {
     "name": "Johannes Ryvænge Gjeset",
     "mail": "Johannes@gjeset.no",
@@ -179,12 +294,10 @@
     "linkedin": "https://www.linkedin.com/in/johannes-gjeset/",
     "discord": "scrapjo"
   },
-
   "Copyright": {
     "copy": "©",
     "made": " Made By Johannes"
   },
-
   "mediaIcon": {
     "discord": "./src/images/icons/discord.svg",
     "dribble": "./src/images/icons/dribble.svg",
@@ -196,6 +309,3 @@
     "twitter": "./src/images/icons/twitter.svg"
   }
 }
-
-  
-

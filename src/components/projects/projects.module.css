@@ -28,6 +28,11 @@
   top: 50%;
 }
 
+h3 {
+  font-size: 20px;
+  padding: 8px;
+}
+
 .project_header {
   display: flex;
   justify-content: space-between;
@@ -52,8 +57,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  align-items: start;
   margin-top: 48px;
+  height: 450px;
 }
 
 .project {
@@ -83,10 +88,17 @@ ul {
   margin: 16px;
 }
 
+p {
+  padding: 8px;
+}
+
 .project_image {
   border-bottom: 1px solid;
   border-color: var(--gray);
   aspect-ratio: 16 / 9;
+}
+
+.project a._button_button_primary {
 }
 
 .project img {
