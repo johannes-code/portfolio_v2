@@ -20,7 +20,7 @@ export const About = () => {
           {data.pages.home.about.button}
         </a>
       </div>
-      <img src="/public/about-me.png" alt="About Me" className="about_image" />
+      <img src="/about-me.png" alt="About Me" className="about_image" />
     </section>
   );
 };

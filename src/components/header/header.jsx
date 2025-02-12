@@ -5,7 +5,7 @@ import { MediaHeader } from "./MediaHeader";
 export const Header = () => {
   return (
     <header className={styles.header}>
-      <div className={styles.container}>
+      
         <div className={styles.innerHeader}>
           <img className={styles.logoImage} src="/logo.svg" alt="logo" />
           <ul className={styles.navItems}>
@@ -16,7 +16,7 @@ export const Header = () => {
             ))}
           </ul>
         </div>
-      </div>
+      
 
       <MediaHeader />
     </header>

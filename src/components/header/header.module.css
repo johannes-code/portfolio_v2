@@ -4,26 +4,25 @@
   padding-top: 32px;
   padding-bottom: 8px;
 }
-.container {
-  /* display: flex; */
-  /* justify-content: center; */
-}
 
-header.innerHeader {
-  display: grid;
-  /* grid-template-columns: 1fr 1fr; */
-  /* flex-direction: column; */
-  justify-content: center;
+header div.innerHeader {
+  display: flex;
+  justify-content: space-around;
 }
 
 header ul.navItems {
   display: flex;
 }
 
+header a::before{
+  content: "#";
+  color:var(--primary);
+}
+
 .logoImage {
   width: 24px;
   height: 24px;
-  /* display: block; */
+
 }
 
 .media_icon {
