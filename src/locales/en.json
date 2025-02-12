@@ -137,7 +137,7 @@
         "tech": ["programming.5", "other.0,1,5", "tool.0,3"],
         "description": "Personal portfolio",
         "link": "https://github.com/johannes-code/portfolio_v2",
-        "screenshot": "../../public/screenshots/portfolio.png",
+        "screenshot": "/screenshots/portfolio.png",
         "long_desc": [
           {
             "heading": "Background",
@@ -188,7 +188,7 @@
         "tech": ["programming.5", "other.0,1,4,5", "tool.0,3","framework.0"],
         "description": "Using internal database and display data in next.js",
         "link": "https://github.com/johannes-code/next_planets",
-        "screenshot": "../../public/screenshots/next_planets.png",
+        "screenshot": "/screenshots/next_planets.png",
         "long_desc": [
           {
             "heading": "Background",
@@ -236,7 +236,7 @@
         "tech": ["programming.5", "other.0,1,5","tool.0,3"],
         "description": "Group project, use API to find company information",
         "link": "https://github.com/johannes-code/companyInformation",
-        "screenshot": "../../public/screenshots/companyInformation.png",
+        "screenshot": "/screenshots/companyInformation.png",
         "long_desc": [
           {
             "heading": "Background",
