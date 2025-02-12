@@ -7,12 +7,12 @@
   font-weight: 500;
   position: relative;
   float: none;
-  clear: none;
+  clear: both;
   display: inline-block;
 }
 
 .h2::before {
-  content: "# ";
+  content: "#";
   color: var(--primary);
 }
 
@@ -23,15 +23,16 @@
   height: 1px;
   background-color: var(--primary);
   position: absolute;
-  transform: translate(100% 50%);
-  left: 130px;
+  transform: translate(100%, -50%);
+  right: -16px;
   top: 50%;
 }
 
 .skills_content {
-  display: flex;
+  display: grid;
   gap: 32px;
-  flex-wrap: wrap;
+  
+  
 }
 
 .illustrations {
@@ -54,6 +55,7 @@
   display: inline-block;
   max-width: 300px;
   min-width: 200px;
+  
 }
 
 .skill_block_name {
@@ -79,6 +81,7 @@
 
 ul {
   list-style: none;
+  
 }
 
 .illustrations_logo {

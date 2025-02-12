@@ -58,7 +58,7 @@ h3 {
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   margin-top: 48px;
-  height: 450px;
+  height: 480px;
 }
 
 .project {
@@ -93,12 +93,15 @@ p {
 }
 
 .project_image {
+  padding:4px;
   border-bottom: 1px solid;
   border-color: var(--gray);
   aspect-ratio: 16 / 9;
 }
 
-.project a._button_button_primary {
+a{
+  margin-left: 8px;
+  padding:4px;
 }
 
 .project img {
