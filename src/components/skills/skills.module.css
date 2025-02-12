@@ -7,12 +7,12 @@
   font-weight: 500;
   position: relative;
   float: none;
-  clear: both;
+  clear: none;
   display: inline-block;
 }
 
 .h2::before {
-  content: "#";
+  content: "# ";
   color: var(--primary);
 }
 
@@ -23,8 +23,8 @@
   height: 1px;
   background-color: var(--primary);
   position: absolute;
-  transform: translate(100%, -50%);
-  right: -16px;
+  transform: translate(100% 50%);
+  left: 130px;
   top: 50%;
 }
 

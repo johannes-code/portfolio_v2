@@ -29,12 +29,11 @@ body {
 
 .container_content {
   max-width: 1024px;
-  gap: 112px;
   margin: 0 auto;
   position: relative;
 }
 
-container .container_content {
+.container_content {
   margin-top: 112px;
   flex: 1;
   display: flex;
