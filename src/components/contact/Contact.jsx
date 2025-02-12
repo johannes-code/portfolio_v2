@@ -5,21 +5,33 @@ export const Contact = () => {
   const contacts = data.pages.home.contacts;
 
   return (
-    <section className={styles.contacts}>
+    <section className={styles.contacts} id="contacts">
       <h2 className={styles.h2}>{contacts.title}</h2>
-      <div className={styles.contacts_content}>
-        <p className={styles.contacts_description}>{contacts.text}</p>
-        <h3 className={styles.contacts_title}>{contacts.media}</h3>
-        
-        <div className={styles.contacts_list}>
-          <a className={styles.contact} href="https://discord.com/users/scrapjo"></a>
-            <img src={data.mediaIcon.discord} alt="" />
-            <div className={styles.contact_name}>{data.contactinfo.discord}</div>
-          
-          <a className={styles.contact} href="mailto:johannes@gjeset.no"></a>
-            <img src={data.mediaIcon.email} alt="" />
-            <div className={styles.contact_name}>{data.contactinfo.mail}</div>
-        
+      <div className={styles.contacts__content}>
+        <p className={styles.contacts__description}>{contacts.text}</p>
+
+        <div className={styles.contacts__media}>
+          <h3 className={styles.contacts__title}>{contacts.media}</h3>
+          <div className={styles.contacts__list}>
+            {/* Discord Contact */}
+            <a
+              className={styles.contact}
+              href="https://discord.com/users/scrapjo"
+            >
+              <img src={data.mediaIcon.discord} alt="Discord Icon" />
+              <div className={styles.contact__name}>
+                {data.contactinfo.discord}
+              </div>
+            </a>
+
+            {/* Email Contact */}
+            <a className={styles.contact} href="mailto:johannes@gjeset.no">
+              <img src={data.mediaIcon.email} alt="Email Icon" />
+              <div className={styles.contact__name}>
+                {data.contactinfo.mail}
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </section>
