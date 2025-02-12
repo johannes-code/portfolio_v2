@@ -181,7 +181,8 @@
   },
 
   "Copyright": {
-    "copy": "©+ year"
+    "copy": "©",
+    "made": " Made By Johannes"
   },
 
   "mediaIcon": {

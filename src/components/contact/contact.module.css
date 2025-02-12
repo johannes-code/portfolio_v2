@@ -1,5 +1,6 @@
 .contacts {
   width: 100%;
+  padding-bottom: 32px;
 }
 
 .h2 {
@@ -12,7 +13,7 @@
 }
 
 .h2::before {
-  content: "# ";
+  content: "#";
   color: var(--primary);
 }
 

@@ -19,6 +19,7 @@ export const Contact = () => {
               href="https://discord.com/users/scrapjo"
             >
               <img src={data.mediaIcon.discord} alt="Discord Icon" />
+
               <div className={styles.contact__name}>
                 {data.contactinfo.discord}
               </div>

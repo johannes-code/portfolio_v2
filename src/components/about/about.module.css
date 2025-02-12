@@ -33,7 +33,7 @@
 }
 
 .h2::before {
-  content: "# ";
+  content: "#";
   color: var(--primary);
 }
 
