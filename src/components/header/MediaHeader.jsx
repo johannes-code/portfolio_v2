@@ -1,3 +1,5 @@
+import data from "../../locales/en.json"
+
 
 export const MediaHeader = () => {
 
@@ -9,18 +11,18 @@ export const MediaHeader = () => {
           <div className ="flex flex-col space-y-4">
             <img
               className="media_icon .h-3rem .w-3rem"
-              src="/src/images/icons/discord.svg"
-              alt="discordicon"
+              src={data.mediaIcon.discord}
+              alt="discordIcon"
             />
             <img
               className="media_icon .h-3rem .w-3rem"
-              src="/src/images/icons/github.svg"
-              alt="githubicon"
+              src={data.mediaIcon.github}
+              alt="githubIcon"
             />
             <img 
             className="media_icon .h-3rem .w-3rem" 
-            src="/src/images/icons/email.svg" 
-            alt="emailicon" 
+            src={data.mediaIcon.email} 
+            alt="emailIcon" 
             />
           </div>
       

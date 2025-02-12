@@ -10,7 +10,7 @@ export const Skills = () => {
       <div className={styles.skills_content}>
         <div className={styles.skills_illustrations}>
           <img
-            src="/public/logo-outline.svg"
+            src="/logo-outline.svg"
             alt="Skills Illustration"
             className={styles.illustrations_logo}
           />

@@ -299,13 +299,13 @@
     "made": " Made By Johannes"
   },
   "mediaIcon": {
-    "discord": "./src/images/icons/discord.svg",
-    "dribble": "./src/images/icons/dribble.svg",
-    "email": "./src/images/icons/email.svg",
-    "figma": "./src/images/icons/figma.svg",
-    "github": "./src/images/icons/github.svg",
-    "linkedin": "./src/images/icons/linkedin.svg",
-    "telegram": "./src/images/icons/telegram.svg",
-    "twitter": "./src/images/icons/twitter.svg"
+    "discord": "/icons/discord.svg",
+    "dribble": "/icons/dribble.svg",
+    "email": "/icons/email.svg",
+    "figma": "/icons/figma.svg",
+    "github": "/icons/github.svg",
+    "linkedin": "/icons/linkedin.svg",
+    "telegram": "/icons/telegram.svg",
+    "twitter": "/icons/twitter.svg"
   }
 }
