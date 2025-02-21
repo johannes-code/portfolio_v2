@@ -1,9 +1,9 @@
 {
   "header": [
     { "name": "Home", "url": "/" },
-    { "name": "Projects", "url": "/projects" },
-    { "name": "About-me", "url": "/about-me" },
-    { "name": "Contacts", "url": "/contacts" }
+    { "name": "Projects", "url": "#projects" },
+    { "name": "About-me", "url": "#about-me" },
+    { "name": "Contacts", "url": "#contacts" }
   ],
   "footer": {
     "description": "Fullstack developer that loves tech",
