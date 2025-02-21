@@ -1,17 +1,14 @@
 import data from "/src/locales/en.json";
-import styles from "./projects.module.css";
-import button from "../button/button.module.css";
+import styles from "./projectsExpanded.module.css"
+import projects from "../projects/Projects"
 
-export const Projects = () => {
-  const projectPageData = data.pages.home.projects;
-  const projectData = data.projectsExpanded;
-  const skillData = data.skill;
+export const projectsExpanded = () => {
 
-  return (
+return (
     <section className={styles.projects} id="projects">
       <div className={styles.projects_header}>
         <h2 className={styles.h2}>{projectPageData.title}</h2>
-        <a className={styles.projects_link} href="/projectsExpanded">
+        <a className={styles.projects_link} href="/projects">
           {projectPageData.button}
         </a>
       </div>
@@ -80,3 +77,10 @@ export const Projects = () => {
     </section>
   );
 };
+    
+  
+
+
+
+
+
