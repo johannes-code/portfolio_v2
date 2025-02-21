@@ -1,6 +1,5 @@
 .header {
   position: right;
-
   padding-top: 32px;
   padding-bottom: 8px;
 }
@@ -14,15 +13,14 @@ header ul.navItems {
   display: flex;
 }
 
-header a::before{
+header a::before {
   content: "#";
-  color:var(--primary);
+  color: var(--primary);
 }
 
 .logoImage {
   width: 24px;
   height: 24px;
-
 }
 
 .media_icon {
