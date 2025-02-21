@@ -6,7 +6,7 @@ export const About = () => {
   const aboutData = data.pages.about;
 
   return (
-    <section className={styles.about}>
+    <section className={styles.about} id="about-me">
       <div className={styles.about_content}>
         <h2 className={styles.h2}>{data.pages.home.about.title}</h2>
         <div className={styles.about_text}>

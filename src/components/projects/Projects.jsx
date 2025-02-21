@@ -8,7 +8,7 @@ export const Projects = () => {
   const skillData = data.skill;
 
   return (
-    <section className={styles.projects}>
+    <section className={styles.projects} id="projects">
       <div className={styles.projects_header}>
         <h2 className={styles.h2}>{projectPageData.title}</h2>
         <a className={styles.projects_link} href="/projects">
