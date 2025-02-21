@@ -1,0 +1,50 @@
+.quote {
+  border: 1px solid;
+  border-color: var(--gray);
+  position: relative;
+  margin: 0;
+}
+
+.quote::before,
+.quote::after {
+  content: '"';
+  position: absolute;
+  color: var(--gray);
+  font-size: 64px;
+  font-weight: 700;
+  background-image: linear-gradient(var(--background), var(--background));
+  background-size: 100% 40%;
+  background-repeat: no-repeat;
+}
+.quote::before {
+  top: -32px;
+}
+.quote::after {
+  bottom: -44px;
+  right: 10px;
+}
+
+.quote_text {
+  padding: 32px;
+  font-size: 24px;
+  font-weight: 500;
+  background-color: var(--background);
+}
+
+.quote_author {
+  position: absolute;
+  color: var(--gray);
+  border: 1px solid;
+  border-color: var(--gray);
+  padding: 8px;
+  right: -1px;
+  font-size: 16px;
+}
+.quote_author::before {
+  content: "- ";
+}
+
+.quote figcaption {
+  display: block;
+  unicode-bidi: isolate;
+}

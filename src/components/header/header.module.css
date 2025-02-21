@@ -1,0 +1,30 @@
+.header {
+  position: right;
+  padding-top: 32px;
+  padding-bottom: 8px;
+}
+
+header div.innerHeader {
+  display: flex;
+  justify-content: space-around;
+}
+
+header ul.navItems {
+  display: flex;
+}
+
+header a::before {
+  content: "#";
+  color: var(--primary);
+}
+
+.logoImage {
+  width: 24px;
+  height: 24px;
+}
+
+.media_icon {
+  position: left 2rem;
+  height: 50px;
+  width: 50px;
+}

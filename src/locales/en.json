@@ -1,0 +1,311 @@
+{
+  "header": [
+    { "name": "Home", "url": "/" },
+    { "name": "Projects", "url": "#projects" },
+    { "name": "About-me", "url": "#about-me" },
+    { "name": "Contacts", "url": "#contacts" }
+  ],
+  "footer": {
+    "description": "Fullstack developer that loves tech",
+    "copyright": "Copyright 2025. Made by Johannes",
+    "media": "Media"
+  },
+  "skills": {
+    "language": "Languages",
+    "database": "Databases",
+    "other": "Other",
+    "tool": "Tools",
+    "framework": "Frameworks"
+  },
+  "projects": {
+    "Companyinformation": {
+      "name": "Companyinformation",
+      "description": "Fetching and rendering information from API"
+    },
+    "portfolio": {
+      "name": "This Portfolio",
+      "description": "My personal portfolio"
+    },
+    "Rick and Morty": {
+      "name": "Rick and Morty",
+      "description": "Renders information from the Rick and Morty API"
+    },
+    "Dreamtrips": {
+      "name": "Dreamtrips",
+      "description": "Simple HTML page that shows you places you dont want to go"
+    }
+  },
+  "pages": {
+    "home": {
+      "hero": {
+        "title": "Johannes is a <span>full stack developer</span> that <span>bridges</span> user experience with <span> technological innovation</span>",
+        "description": "With a skill set spanning both front-end and back-end development, he crafts innovative digital solutions that are as functional as they are intuitive",
+        "button": "Contact ME",
+        "status": "Open for new opportunities"
+      },
+      "quote": {
+        "text": "Believe you can and you're halfway there.",
+        "author": "Theodore Roosevelt"
+      },
+
+      "projects": {
+        "title": "projects",
+        "button": "View all"
+      },
+      "skills": {
+        "title": "skills"
+      },
+      "about": {
+        "title": "about",
+        "description": [" fill in information here"],
+        "button": "View all"
+      },
+      "contacts": {
+        "title": "contacts",
+        "text": "I’m interested in freelance opportunities. However, if you have other request or question, don’t hesitate to contact me",
+        "media": "Message me here",
+        "donate": "Donate me here"
+      }
+    },
+    "projects": {
+      "description": "All of my projects",
+      "decent": "decent",
+      "small": "small",
+      "inProgress": "unfinished"
+    },
+    "about": {
+      "head": "Who am I",
+      "description": [
+         "Computers and tech has been one of my interests since I was about 11years old.",
+         "However the last 4-5years ive focused more and more of my time on this interest, because I want to do this for a living.",
+         "My passion is both whats going on in the background, and what the costumer sees."
+        ]
+      },
+      "skills": {
+        "title": "skills"
+      },
+
+      "facts": {
+        "title": "fun-facts",
+        "list": [
+          "I like summer more than i like winter",
+          "I can fix my own car",
+          "I like sushi and pizza, but not at the same time ;)",
+          "I love 80's car movies"
+        ]
+      }
+  
+    },
+  "quotes": {
+    "Dr_who": {
+      "text": "With great power comes great electricity bill",
+      "author": "Dr. Who"
+    },
+    "Wayne_Dyer": {
+      "text": "If you believe it will work, you'll see opportunities. If you believe it won't, you will see obstacles.",
+      "author": "Wayne Dyer"
+    },
+
+    "Theodore_Roosevelt": {
+      "text": "Believe you can and you're halfway there.",
+      "author": "Theodore Roosevelt"
+    },
+
+    "Abdul_Kalam": {
+      "text": "If you fail, never give up because F.A.I.L. means ‘first attempt in learning’; End is not the end, in fact, E.N.D. means “Effort Never Dies’…",
+      "author": "Dr. A.P.J. Abdul Kalam"
+    },
+
+    "Albert_Einstein": {
+      "text": "Strive not to be a success, but rather to be of value.",
+      "author": "Albert Einstein"
+    },
+
+    "Audrey_Hepburn": {
+      "text": "Nothing is impossible, the word itself says \"I’m possible!\"",
+      "author": "Audrey Hepburn"
+    },
+
+    "Albert_Einstein2": {
+      "text": "A person who never made a mistake never tried anything new.",
+      "author": "Albert Einstein"
+    }
+  },
+  "projectsExpanded": [
+      {
+        "name": "portfolio",
+        "tech": ["programming.5", "other.0,1,5", "tool.0,3"],
+        "description": "Personal portfolio",
+        "link": "https://github.com/johannes-code/portfolio_v2",
+        "screenshot": "/screenshots/portfolio.png",
+        "long_desc": [
+          {
+            "heading": "Background",
+            "content": "This is my first portfolio project, undertaken with little prior experience."
+          },
+          {
+            "heading": "Inspiration",
+            "content": "The design is heavily inspired by eliasdevis.github.io."
+          },
+          {
+            "heading": "Version",
+            "content": "This is the second version, it is completely rewritten in React for improved performance and maintainability."
+          }
+        ],
+        "learned": [
+          {
+            "heading": "Challenges",
+            "content": "Converting from HTML to React required a significant shift in mindset, I also chose to go with regular css instead of sass, which it originally was written in"
+          },
+          {
+            "heading": "Key Takeaways",
+            "content": "I learned about component structure, data flow, and the importance of planning, using react also helped me in understanding to work component by component"
+          }
+        ],
+        "missed": [
+          {
+            "heading": "Testing",
+            "content": "I often worte too big chuncks of code, before testing, just to find out that something wasnt working"
+          },
+          {
+            "heading": "Responsive Design",
+            "content": "More attention should have been paid to responsive design during the process to ensure compatibility across devices."
+          }
+        ],
+        "why": [
+          {
+            "heading": "Purpose",
+            "content": "To create a professional online presence showcasing my skills and projects while expanding my skillset, and push myself to learn more"
+          },
+          {
+            "heading": "Learning Goals",
+            "content": "To gain practical experience with React development and deployment."
+          }
+        ]
+      },
+      {
+        "name": "next_planets",
+        "tech": ["programming.5", "other.0,1,4,5", "tool.0,3","framework.0"],
+        "description": "Using internal database and display data in next.js",
+        "link": "https://github.com/johannes-code/next_planets",
+        "screenshot": "/screenshots/next_planets.png",
+        "long_desc": [
+          {
+            "heading": "Background",
+            "content": "First project with next.js, the task was to render dynamic data from an imaginary database"
+          },
+          {
+            "heading": "Inspiration",
+            "content": "All the objects in this assignment is pure fantasy"
+          },
+          {
+            "heading": "Version",
+            "content": "This is the final version of this project"
+          }
+        ],
+        "learned": [
+          {
+            "heading": "Challenges",
+            "content": "Know when to stop, my fantasy projects has a tendency to go waaay out of hand, other challenges was to render the data as I wanted"
+          },
+          {
+            "heading": "Key Takeaways",
+            "content": "For me this project was time sensetive, I wanted to make something I could stand by, I could have done It more easy, but for me its important to learn, not just taking the easy way"
+          }
+        ],
+        "missed": [
+          {
+            "heading": "Time",
+            "content": "I would have liked to have more time on this project, yet i feel like I completed the task"
+          }
+          
+        ],
+        "why": [
+          {
+            "heading": "Purpose",
+            "content": "This project was about getting to know next.js, to see how it can be used, and how it can get information from an external database"
+          },
+          {
+            "heading": "Learning Goals",
+            "content": "To gain practical experience with next.js development and deployment."
+          }
+        ]
+      },
+      {
+        "name": "Companyinformation",
+        "tech": ["programming.5", "other.0,1,5","tool.0,3"],
+        "description": "Group project, use API to find company information",
+        "link": "https://github.com/johannes-code/companyInformation",
+        "screenshot": "/screenshots/companyInformation.png",
+        "long_desc": [
+          {
+            "heading": "Background",
+            "content": "This was the first group-assignment, we where supposed to work together in React"
+          },
+        
+          {
+            "heading": "Version",
+            "content": "This is the last version, and the final version"
+          }
+        ],
+        "learned": [
+          {
+            "heading": "Challenges",
+            "content": "This project was supposed to be a 2 person group task, I ended up doing it alone, because the other person of the team didnt meet up, I still tried to simulate being in a team, working with branches, etc"
+          },
+          {
+            "heading": "Key Takeaways",
+            "content": "I liked this project, it was enjoyable to make the data render, and to get the search function to work as intended "
+          }
+        ],
+        "missed": [
+          {
+            "heading": "Testing",
+            "content": "I went through a lot of testing, and at one point I found that the search function didnt work as intended"
+          },
+          {
+            "heading": "Responsive Design",
+            "content": "I have not implented responsive design on this project"
+          }
+        ],
+        "why": [
+          {
+            "heading": "Purpose",
+            "content": "The purpose of this project was to work together in a team, that didnt work out, but I did the best I could, and I used people around me to ask for things, and to get input on my solutions"
+          },
+          {
+            "heading": "Learning Goals",
+            "content": "To gain practical experience with React development and deployment, and to learn how to work in team"
+          }
+        ]
+      }
+    ],
+  "skill": {
+    "programming": ["Python", "C", "C#", "C++", "Java", "JavaScript"],
+    "tool": ["VScode", "Nano", "Vim", "GitHub"],
+    "other": ["Html", "Css", "Sass", "Scss", "Tailwind", "React"],
+    "database": ["mySQL"],
+    "framework": ["Next.js"]
+  },
+  "contactinfo": {
+    "name": "Johannes Ryvænge Gjeset",
+    "mail": "Johannes@gjeset.no",
+    "github": "https://github.com/johannes-code",
+    "linkedin": "https://www.linkedin.com/in/johannes-gjeset/",
+    "discord": "scrapjo"
+  },
+  "Copyright": {
+    "copy": "©",
+    "made": " Made By Johannes"
+  },
+  "mediaIcon": {
+    "discord": "/icons/discord.svg",
+    "dribble": "/icons/dribble.svg",
+    "email": "/icons/email.svg",
+    "figma": "/icons/figma.svg",
+    "github": "/icons/github.svg",
+    "linkedin": "/icons/linkedin.svg",
+    "telegram": "/icons/telegram.svg",
+    "twitter": "/icons/twitter.svg"
+  }
+}
