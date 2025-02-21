@@ -1,6 +1,7 @@
 import data from "/src/locales/en.json";
 import styles from "./projects.module.css";
 import button from "../button/button.module.css";
+import { Link } from "react-router-dom";
 
 export const Projects = () => {
   const projectPageData = data.pages.home.projects;
@@ -71,9 +72,11 @@ export const Projects = () => {
             <p>{project.description}</p>
 
             {/* 5. Button/Link */}
-            <a href={project.link} className={button._button_button_primary}>
+            <Link to={`/project/${projectIndex}`} 
+                  className={button._button_button_primary}
+            >
               View Project
-            </a>
+            </Link>
           </div>
         ))}
       </div>
