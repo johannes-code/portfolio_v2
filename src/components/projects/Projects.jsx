@@ -12,9 +12,9 @@ export const Projects = () => {
     <section className={styles.projects} id="projects">
       <div className={styles.projects_header}>
         <h2 className={styles.h2}>{projectPageData.title}</h2>
-        <a className={styles.projects_link} href="/projectsExpanded">
+        <Link className={styles.projects_link} href="/projectsExpanded">
           {projectPageData.button}
-        </a>
+        </Link>
       </div>
       <div className={styles.project_list}>
         {projectData.map((project, projectIndex) => (
@@ -72,7 +72,7 @@ export const Projects = () => {
             <p>{project.description}</p>
 
             {/* 5. Button/Link */}
-            <Link to={`/project/${projectIndex}`} 
+            <Link to={`/project/${index}`} 
                   className={button._button_button_primary}
             >
               View Project

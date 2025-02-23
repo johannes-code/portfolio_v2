@@ -8,7 +8,7 @@ import { Skills } from "./components/skills/Skills";
 import { About } from "./components/about/About";
 import { Contact } from "./components/contact/Contact";
 import { Footer } from "./components/footer/Footer";
-import { projectsExpanded } from "./components/projectsExpanded/ProjectsExpanded";
+import { ProjectsExpanded} from "./components/projectsExpanded/ProjectsExpanded";
 
 
 function App() {
@@ -27,7 +27,8 @@ function App() {
               <Contact />
             </div>
           } />
-          <Route path="/project/:id" element={<projectsExpanded />} />
+          <Route path="/" element={<Projects />} />
+          <Route path="/project/:id" element={<ProjectsExpanded />} />
         </Routes>
       <Footer />
     </Router>
