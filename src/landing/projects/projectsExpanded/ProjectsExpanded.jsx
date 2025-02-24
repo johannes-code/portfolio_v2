@@ -1,32 +1,65 @@
-import { useParams } from "react-router-dom";
-import data from "/src/locales/en.json";
+import { useState } from "react";
+import styles from "./projectsExpanded.module.css";
+import PropTypes from "prop-types";
+import data from "../../../locales/en.json";
 
-export const ProjectsExpanded = () => {
-  const { id } = useParams();
-  const project = data.projectsExpanded[parseInt(id, 10)];
-
-  if (!project) {
-    return <div>Project not found</div>;
-  }
-
+const renderArrayContent = (array, title) => {
   return (
-    <div className={styles.projectsExpanded}>
-      <h2>{project.name}</h2>
-      <img src={project.screenshot} alt={project.name} />
-      <p>{project.description}</p>
-      <a href={project.link} target="_blank" rel="noopener noreferrer">
-        Project Link
-      </a>
-
-      <h3>Long Description</h3>
-      {project.long_desc.map((item, index) => (
+    <div>
+      <h3>{title}</h3>
+      {array.map((item, index) => (
         <div key={index}>
-          <h4>{item.heading}</h4>
+          <p>
+            <b>{item.heading}</b>
+          </p>
           <p>{item.content}</p>
         </div>
       ))}
-
-      {/* Similarly, you can map through 'learned', 'missed', and 'why' arrays */}
     </div>
   );
+};
+
+export const ProjectsExpanded = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const currentProject = data.projectsExpanded[currentIndex];
+
+  return (
+    <div className={styles.projectsExpanded}>
+      <div>
+        <h2>{currentProject.name}</h2>
+        <p>{currentProject.description}</p>
+        <p>{currentProject.tech}</p>
+        <p>{currentProject.link}</p>
+        <img src={currentProject.screenshot} alt={currentProject.name} />
+
+        {renderArrayContent(currentProject.long_desc)}
+        {renderArrayContent(currentProject.learned)}
+        {renderArrayContent(currentProject.missed)}
+        {renderArrayContent(currentProject.why)}
+
+        <button
+          onClick={() =>
+            setCurrentIndex(
+              (prevIndex) => (prevIndex + 1) % data.projectsExpanded.length
+            )
+          }
+        >
+          Next Project
+        </button>
+      </div>
+    </div>
+  );
+};
+
+ProjectsExpanded.propTypes = {
+  data: PropTypes.shape({
+    projectsExpanded: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+
+        // Add other properties as needed
+      })
+    ).isRequired,
+  }).isRequired,
 };

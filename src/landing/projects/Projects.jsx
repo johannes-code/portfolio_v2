@@ -4,6 +4,7 @@ import button from "../../components/button/button.module.css";
 import { Link } from "react-router-dom";
 
 export const Projects = () => {
+  <projectsExpanded data={data} />;
   const projectPageData = data.pages.home.projects;
   const projectData = data.projectsExpanded;
   const skillData = data.skill;
@@ -12,7 +13,7 @@ export const Projects = () => {
     <section className={styles.projects} id="projects">
       <div className={styles.projects_header}>
         <h2 className={styles.h2}>{projectPageData.title}</h2>
-        <Link className={styles.projects_link} to="/project">
+        <Link className={styles.projects_link} to="/project/">
           {projectPageData.button}
         </Link>
       </div>
