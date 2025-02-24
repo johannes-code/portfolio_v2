@@ -3,7 +3,7 @@ import styles from "./projectsExpanded.module.css";
 import PropTypes from "prop-types";
 import data from "../../../locales/en.json";
 
-const renderArrayContent = (array, title) => {
+const RenderArrayContent = (array, title) => {
   return (
     <div>
       <h3>{title}</h3>
@@ -77,10 +77,10 @@ export const ProjectsExpanded = (data) => {
         <p>{currentProject.link}</p>
         <img src={currentProject.screenshot} alt={currentProject.name} />
 
-        {renderArrayContent(currentProject.long_desc)}
-        {renderArrayContent(currentProject.learned)}
-        {renderArrayContent(currentProject.missed)}
-        {renderArrayContent(currentProject.why)}
+        {RenderArrayContent(currentProject.long_desc)}
+        {RenderArrayContent(currentProject.learned)}
+        {RenderArrayContent(currentProject.missed)}
+        {RenderArrayContent(currentProject.why)}
 
         <button
           onClick={() =>
