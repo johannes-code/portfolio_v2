@@ -12,7 +12,7 @@ export const Projects = () => {
     <section className={styles.projects} id="projects">
       <div className={styles.projects_header}>
         <h2 className={styles.h2}>{projectPageData.title}</h2>
-        <Link className={styles.projects_link} href="/projectsExpanded">
+        <Link className={styles.projects_link} to="/projectsExpanded">
           {projectPageData.button}
         </Link>
       </div>
@@ -72,8 +72,9 @@ export const Projects = () => {
             <p>{project.description}</p>
 
             {/* 5. Button/Link */}
-            <Link to={`/project/${index}`} 
-                  className={button._button_button_primary}
+            <Link
+              to={`/project/${projectIndex}`}
+              className={button._button_button_primary}
             >
               View Project
             </Link>
