@@ -12,7 +12,7 @@ export const Projects = () => {
     <section className={styles.projects} id="projects">
       <div className={styles.projects_header}>
         <h2 className={styles.h2}>{projectPageData.title}</h2>
-        <Link className={styles.projects_link} to="/projectsExpanded">
+        <Link className={styles.projects_link} to="/project">
           {projectPageData.button}
         </Link>
       </div>

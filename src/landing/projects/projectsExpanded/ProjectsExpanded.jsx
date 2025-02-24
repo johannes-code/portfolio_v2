@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 import data from "/src/locales/en.json";
 
 export const ProjectsExpanded = () => {
@@ -14,8 +14,10 @@ export const ProjectsExpanded = () => {
       <h2>{project.name}</h2>
       <img src={project.screenshot} alt={project.name} />
       <p>{project.description}</p>
-      <a href={project.link} target="_blank" rel="noopener noreferrer">Project Link</a>
-      
+      <a href={project.link} target="_blank" rel="noopener noreferrer">
+        Project Link
+      </a>
+
       <h3>Long Description</h3>
       {project.long_desc.map((item, index) => (
         <div key={index}>
