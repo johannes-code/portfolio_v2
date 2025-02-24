@@ -1,6 +1,6 @@
 import data from "../../locales/en.json";
 import styles from "./about.module.css";
-import button from "../button/button.module.css";
+import button from "../../components/button/button.module.css";
 
 export const About = () => {
   const aboutData = data.pages.about;

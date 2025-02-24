@@ -1,6 +1,6 @@
 import data from "/src/locales/en.json";
 import styles from "./projects.module.css";
-import button from "../button/button.module.css";
+import button from "../../components/button/button.module.css";
 import { Link } from "react-router-dom";
 
 export const Projects = () => {
