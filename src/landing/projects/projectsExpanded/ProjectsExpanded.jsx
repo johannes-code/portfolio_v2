@@ -2,22 +2,9 @@ import { useState } from "react";
 import styles from "./projectsExpanded.module.css";
 import PropTypes from "prop-types";
 import { RenderTechSkills } from "../../../components/functions/RenderTechSkills";
+import { RenderArrayContent } from "../../../components/functions/RenderArrayContent";
 
-const RenderArrayContent = (array, title) => {
-  return (
-    <div>
-      <h3>{title}</h3>
-      {array.map((item, index) => (
-        <div key={index}>
-          <p>
-            <b>{item.heading}</b>
-          </p>
-          <p>{item.content}</p>
-        </div>
-      ))}
-    </div>
-  );
-};
+<RenderArrayContent />;
 
 export const ProjectsExpanded = (data, techArray) => {
   const [currentIndex, setCurrentIndex] = useState(0);
