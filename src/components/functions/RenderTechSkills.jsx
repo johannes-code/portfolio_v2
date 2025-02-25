@@ -1,8 +1,9 @@
+import PropTypes from "prop-types";
 import skillData from "../../locales/en.json";
 
-export const RenderTechSkills = (techArray) => {
+export const RenderTechSkills = ({ techArray, ulClassName, liClassName }) => {
   return (
-    <ul className={styles.project_techs}>
+    <ul className={ulClassName}>
       {techArray && techArray.length > 0 ? (
         techArray
           .flatMap((techItem, techIndex) => {
@@ -18,7 +19,6 @@ export const RenderTechSkills = (techArray) => {
             }
 
             const indexArray = indices.split(",");
-
             return indexArray.map((index, skillIndex) => {
               const skill = skillData[category][index];
               if (!skill) {
@@ -29,7 +29,7 @@ export const RenderTechSkills = (techArray) => {
               return (
                 <li
                   key={`${skill}-${techIndex}-${skillIndex}`}
-                  className={styles.project_tech}
+                  className={liClassName}
                 >
                   {skill}
                 </li>
@@ -42,4 +42,10 @@ export const RenderTechSkills = (techArray) => {
       )}
     </ul>
   );
+};
+
+RenderTechSkills.propTypes = {
+  techArray: PropTypes.arrayOf(PropTypes.string).isRequired,
+  ulClassName: PropTypes.string,
+  liClassName: PropTypes.string,
 };

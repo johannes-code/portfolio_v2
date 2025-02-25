@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./projectsExpanded.module.css";
 import PropTypes from "prop-types";
-import data from "../../../locales/en.json";
+import { RenderTechSkills } from "../../../components/functions/RenderTechSkills";
 
 const RenderArrayContent = (array, title) => {
   return (
@@ -19,51 +19,7 @@ const RenderArrayContent = (array, title) => {
   );
 };
 
-const RenderTechSkills = (techArray) => {
-  return (
-    <ul className={styles.project_techs}>
-      {techArray && techArray.length > 0 ? (
-        techArray
-          .flatMap((techItem, techIndex) => {
-            if (typeof techItem !== "string" || !techItem.includes(".")) {
-              console.error("Invalid tech item:", techItem);
-              return null;
-            }
-
-            const [category, indices] = techItem.split(".");
-            if (!data[category]) {
-              console.error("Invalid category:", category);
-              return null;
-            }
-
-            const indexArray = indices.split(",");
-
-            return indexArray.map((index, skillIndex) => {
-              const skill = data[category][index];
-              if (!skill) {
-                console.error(`Invalid skill at ${category}[${index}]`);
-                return null;
-              }
-
-              return (
-                <li
-                  key={`${skill}-${techIndex}-${skillIndex}`}
-                  className={styles.project_tech}
-                >
-                  {skill}
-                </li>
-              );
-            });
-          })
-          .filter(Boolean)
-      ) : (
-        <li>No skills listed</li>
-      )}
-    </ul>
-  );
-};
-
-export const ProjectsExpanded = (data) => {
+export const ProjectsExpanded = (data, techArray) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentProject = data.projectsExpanded[currentIndex];
 
@@ -72,7 +28,13 @@ export const ProjectsExpanded = (data) => {
       <div>
         <h2>{currentProject.name}</h2>
         <p>{currentProject.description}</p>
-        {RenderTechSkills(currentProject.tech)}
+
+        <RenderTechSkills
+          techArray={techArray}
+          ulClassName={styles.project_techs}
+          liClassName={styles.project_tech}
+        />
+
         <p>{currentProject.tech}</p>
         <p>{currentProject.link}</p>
         <img src={currentProject.screenshot} alt={currentProject.name} />
