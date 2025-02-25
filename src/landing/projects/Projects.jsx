@@ -80,7 +80,7 @@ export const Projects = () => {
                 to={`/project/${projectIndex}`}
                 className={button._button_button_primary}
               >
-                View Project
+                View project
               </Link>
             </div>
           ))}
