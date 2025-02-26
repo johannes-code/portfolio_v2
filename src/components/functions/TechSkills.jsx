@@ -1,11 +1,13 @@
 import PropTypes from "prop-types";
-import skillData from "../../locales/en.json";
+import data from "/src/locales/en.json";
 
-export const RenderTechSkills = ({ techArray, ulClassName, liClassName }) => {
+export const TechSkills = ({ tech, ulClassName, liClassName }) => {
+  const skillData = data.skill;
+
   return (
     <ul className={ulClassName}>
-      {techArray && techArray.length > 0 ? (
-        techArray
+      {tech && tech.length > 0 ? (
+        tech
           .flatMap((techItem, techIndex) => {
             if (typeof techItem !== "string" || !techItem.includes(".")) {
               console.error("Invalid tech item:", techItem);
@@ -19,6 +21,7 @@ export const RenderTechSkills = ({ techArray, ulClassName, liClassName }) => {
             }
 
             const indexArray = indices.split(",");
+
             return indexArray.map((index, skillIndex) => {
               const skill = skillData[category][index];
               if (!skill) {
@@ -44,8 +47,8 @@ export const RenderTechSkills = ({ techArray, ulClassName, liClassName }) => {
   );
 };
 
-RenderTechSkills.propTypes = {
-  techArray: PropTypes.arrayOf(PropTypes.string).isRequired,
+TechSkills.propTypes = {
+  tech: PropTypes.arrayOf(PropTypes.string).isRequired,
   ulClassName: PropTypes.string,
   liClassName: PropTypes.string,
 };

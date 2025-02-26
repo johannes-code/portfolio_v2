@@ -1,0 +1,58 @@
+.projectsExpanded h2 {
+  font-size: 32px;
+  font-weight: 500;
+  position: relative;
+  float: none;
+  clear: both;
+  display: inline-block;
+}
+
+.projectsExpanded h2::before {
+  content: "#";
+  color: var(--primary);
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.projectsExpanded ::after {
+  content: "";
+  display: block;
+  width: 10vw;
+  height: 1px;
+  background-color: var(--primary);
+  position: absolute;
+  transform: translate(100%, -50%);
+  right: -16px;
+  top: 50%;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.projectsExpanded .div {
+  padding: 12px;
+}
+
+.projectsExpanded .ul {
+  list-style: none;
+  border: solid 2px var(--white);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-left: 4px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+p {
+  padding: 8px;
+}
+
+a {
+  margin-left: 8px;
+  padding: 4px;
+}
