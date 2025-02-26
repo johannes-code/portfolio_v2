@@ -1,4 +1,4 @@
-.projectsExpanded h2 {
+.h2 {
   font-size: 32px;
   font-weight: 500;
   position: relative;
@@ -7,7 +7,7 @@
   display: inline-block;
 }
 
-.projectsExpanded h2::before {
+.h2::before {
   content: "#";
   color: var(--primary);
 }
@@ -16,7 +16,7 @@
   box-sizing: border-box;
 }
 
-.projectsExpanded ::after {
+.h2::after {
   content: "";
   display: block;
   width: 10vw;
@@ -30,22 +30,64 @@
 
 h4 {
   font-size: 18px;
-  font-weight: 600;
+  padding: 6px;
 }
 
-.projectsExpanded .div {
-  padding: 12px;
-}
-
-.projectsExpanded .ul {
-  list-style: none;
-  border: solid 2px var(--white);
+.project_header {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding-left: 4px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.projects_link {
+  display: flex;
+  flex-direction: wrap;
+  gap: 8px;
+  text-decoration: underline;
+}
+
+.projects a {
+  color: inherit;
+}
+
+.project_list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+  height: 480px;
+}
+
+.project {
+  border: 1px solid;
+  border-color: var(--gray);
+}
+.project_content {
+  padding: 16px;
+}
+
+.project_techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  color: var(--gray);
+  padding: 8px;
+  border-bottom: 1px solid var(--gray);
+  border-top: 1px solid var(--gray);
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.projectExpanded_description {
+  color: var(--gray);
+  padding: 4px;
 }
 
 p {
@@ -55,4 +97,12 @@ p {
 a {
   margin-left: 8px;
   padding: 4px;
+}
+
+.projectsExpanded_cover {
+  max-width: 80%;
+  display: flex;
+  padding-left: 12px;
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
