@@ -1,28 +1,25 @@
 import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Header } from "./components/header/header";
-import { Hero } from "./components/hero/hero";
-import { Projects } from "./components/projects/Projects";
-import { Quote } from "./components/quote/Quote";
-import { Skills } from "./components/skills/Skills";
-import { About } from "./components/about/About";
-import { Contact } from "./components/contact/Contact";
+import { Projects } from "./landing/projects/Projects";
 import { Footer } from "./components/footer/Footer";
+import { ProjectsExpanded } from "./landing/projects/projectsExpanded/ProjectsExpanded";
+import { LandingPage } from "./landing/LandingPage";
 
 function App() {
   // console.log(header.home)
   return (
-    <>
+    <Router>
       <Header />
       <div className="container_content">
-        <Hero />
-        <Quote />
-        <Projects />
-        <Skills />
-        <About />
-        <Contact />
-        <Footer />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/project" element={<Projects />} />
+          <Route path="/project/:id" element={<ProjectsExpanded />} />
+        </Routes>
       </div>
-    </>
+      <Footer />
+    </Router>
   );
 }
 

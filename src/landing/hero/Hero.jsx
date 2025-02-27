@@ -1,6 +1,6 @@
 import data from "/src/locales/en.json";
 import styles from "./hero.module.css";
-import button from "../button/button.module.css";
+import button from "../../components/button/button.module.css";
 export const Hero = () => {
   const heroData = data.pages.home.hero;
 

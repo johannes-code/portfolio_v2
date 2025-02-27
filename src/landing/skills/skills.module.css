@@ -31,8 +31,6 @@
 .skills_content {
   display: grid;
   gap: 32px;
-  
-  
 }
 
 .illustrations {
@@ -55,7 +53,6 @@
   display: inline-block;
   max-width: 300px;
   min-width: 200px;
-  
 }
 
 .skill_block_name {
@@ -81,7 +78,6 @@
 
 ul {
   list-style: none;
-  
 }
 
 .illustrations_logo {
