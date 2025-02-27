@@ -1,4 +1,4 @@
-import { Hero } from "./hero/hero";
+import { Hero } from "./hero/Hero";
 import { Quote } from "./quote/Quote";
 import { Projects } from "./projects/Projects";
 import { Skills } from "./skills/Skills";
