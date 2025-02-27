@@ -1,8 +1,7 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import styles from "./projectsExpanded.module.css";
 import data from "../../../locales/en.json";
 import { TechSkills } from "../../../components/functions/TechSkills";
-import { Link } from "react-router-dom";
 
 export const ProjectsExpanded = () => {
   const { id } = useParams();
