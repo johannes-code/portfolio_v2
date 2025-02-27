@@ -5,15 +5,12 @@
   float: none;
   clear: both;
   display: inline-block;
+  padding-bottom: 24px;
 }
 
 .h2::before {
   content: "#";
   color: var(--primary);
-}
-*::before,
-*::after {
-  box-sizing: border-box;
 }
 
 .h2::after {
@@ -29,54 +26,8 @@
 }
 
 h4 {
-  font-size: 18px;
-  padding: 6px;
-}
-
-.project_header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 48px;
-}
-
-.projects_link {
-  display: flex;
-  flex-direction: wrap;
-  gap: 8px;
+  font-size: 20px;
   text-decoration: underline;
-}
-
-.projects a {
-  color: inherit;
-}
-
-.project_list {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 48px;
-  height: 480px;
-}
-
-.project {
-  border: 1px solid;
-  border-color: var(--gray);
-}
-.project_content {
-  padding: 16px;
-}
-
-.project_techs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 16px;
-  color: var(--gray);
-  padding: 8px;
-  border-bottom: 1px solid var(--gray);
-  border-top: 1px solid var(--gray);
 }
 
 ul {
@@ -85,24 +36,34 @@ ul {
   justify-content: space-between;
 }
 
+.currentProjectContainer {
+  padding-bottom: 10px;
+}
+.techSkillsContainer {
+  padding: 10px;
+  padding-left: 6px;
+}
+
 .projectExpanded_description {
   color: var(--gray);
-  padding: 4px;
+  padding: 0px;
 }
 
-p {
-  padding: 8px;
+.projectsExpanded_content {
+  padding: 0px;
+  padding-left: 2px;
+  font-weight: 400;
 }
 
-a {
-  margin-left: 8px;
-  padding: 4px;
+.projectsExpanded_h4 {
+  padding: 0px;
+  padding-top: 10px;
 }
 
 .projectsExpanded_cover {
   max-width: 80%;
   display: flex;
-  padding-left: 12px;
+
   padding-top: 14px;
   padding-bottom: 14px;
 }
