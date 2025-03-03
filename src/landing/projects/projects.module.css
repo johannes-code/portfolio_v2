@@ -28,11 +28,6 @@
   top: 50%;
 }
 
-h3 {
-  font-size: 20px;
-  padding: 8px;
-}
-
 .project_header {
   display: flex;
   justify-content: space-between;
@@ -93,15 +88,15 @@ p {
 }
 
 .project_image {
-  padding:4px;
+  padding: 4px;
   border-bottom: 1px solid;
   border-color: var(--gray);
   aspect-ratio: 16 / 9;
 }
 
-a{
+a {
   margin-left: 8px;
-  padding:4px;
+  padding: 4px;
 }
 
 .project img {

@@ -1,6 +1,7 @@
 import data from "../../locales/en.json";
 import styles from "./about.module.css";
-import button from "../button/button.module.css";
+import button from "../../components/button/button.module.css";
+import { Link } from "react-router-dom";
 
 export const About = () => {
   const aboutData = data.pages.about;
@@ -16,9 +17,9 @@ export const About = () => {
             </p>
           ))}
         </div>
-        <a href="/about me" className={button._button_button_primary}>
+        <Link to="/about_me" className={button._button_button_primary}>
           {data.pages.home.about.button}
-        </a>
+        </Link>
       </div>
       <img src="/about-me.png" alt="About Me" className="about_image" />
     </section>
