@@ -4,6 +4,7 @@ import button from "../../components/button/button.module.css";
 import { Link } from "react-router-dom";
 
 export const Projects = () => {
+  window.scrollTo(0, 0);
   const projectPageData = data.pages.home.projects;
   const projectData = data.projectsExpanded;
   const skillData = data.skill;

@@ -3,6 +3,7 @@ import data from "../../../locales/en.json";
 import { SkillsList } from "../../../components/functions/SkillsList";
 
 export const AboutExpanded = () => {
+  window.scrollTo(0, 0);
   const skillData = data.skill;
   const { AboutExpanded } = data;
   const { contactinfo } = data;

@@ -8,7 +8,6 @@ import { LandingPage } from "./landing/LandingPage";
 import { AboutExpanded } from "./landing/about/AboutExpanded/AboutExpanded";
 
 function App() {
-  // console.log(header.home)
   return (
     <Router>
       <Header />

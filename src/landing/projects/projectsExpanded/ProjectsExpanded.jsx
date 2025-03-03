@@ -4,6 +4,8 @@ import data from "../../../locales/en.json";
 import { TechSkills } from "../../../components/functions/TechSkills";
 
 export const ProjectsExpanded = () => {
+  window.scrollTo(0, 0);
+
   const { id } = useParams();
   const projectIndex = parseInt(id, 10);
   const currentProject = data?.projectsExpanded[projectIndex];
