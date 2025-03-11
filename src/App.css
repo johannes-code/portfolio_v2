@@ -10,12 +10,12 @@
 @theme {
   --font-fira: "Fira Code", monospace;
 
-  --primary: hsl(23 90% 56%);
-  --primary-op: hsl(23 90% 56% / 0.1);
-  --gray: hsl(180 38% 39%);
-  --gray-op: hsl(246 46% 40%);
-  --background: hsl(196 30% 17%);
-  --white: hsl(190 22% 91%);
+  --primary: oklch(70.46% 0.1746 47.78);
+  --primary-op: oklch(70.46% 0.1746 47.78 / 10%);
+  --gray: oklch(58.37% 0.0745 195.31);
+  --gray-op: oklch(58.37% 0.0745 195.31 / 10%);
+  --background: oklch(30.16% 0.0277 222.8);
+  --white: oklch(97.46% 0.0446 47.78 / 65%);
 
   --breakpoint_desktopScreen: 1024px;
   --breakpoint_tabletScreen: 768px;
