@@ -10,12 +10,12 @@
 @theme {
   --font-fira: "Fira Code", monospace;
 
-  --primary: hsl(287 60% 65%);
-  --primary-op: hsl(287 60% 65% / 0.1);
-  --gray: hsl(219 14% 71%);
-  --gray-op: hsl(219 14% 71% / 0.1);
-  --background: hsl(218 12% 18%);
-  --white: hsl(0 0% 100%);
+  --primary: hsl(23 90% 56%);
+  --primary-op: hsl(23 90% 56% / 0.1);
+  --gray: hsl(180 38% 39%);
+  --gray-op: hsl(246 46% 40%);
+  --background: hsl(196 30% 17%);
+  --white: hsl(190 22% 91%);
 
   --breakpoint_desktopScreen: 1024px;
   --breakpoint_tabletScreen: 768px;
