@@ -7,7 +7,7 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.innerHeader}>
-        <img className={styles.logoImage} src="/logo.svg" alt="logo" />
+        {/* <img className={styles.logoImage} src="/logo.svg" alt="logo" /> */}
         <ul className={styles.navItems}>
           {data.header.map((item, index) => (
             <li key={item.name + index}>

@@ -21,7 +21,7 @@ export const About = () => {
           {data.pages.home.about.button}
         </Link>
       </div>
-      <img src="/about-me.png" alt="About Me" className="about_image" />
+      {/* <img src="/about-me.png" alt="About Me" className="about_image" /> */}
     </section>
   );
 };
