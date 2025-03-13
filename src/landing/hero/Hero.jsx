@@ -1,6 +1,7 @@
 import data from "/src/locales/en.json";
 import styles from "./hero.module.css";
 import button from "../../components/button/button.module.css";
+
 export const Hero = () => {
   const heroData = data.pages.home.hero;
 
@@ -15,11 +16,11 @@ export const Hero = () => {
         <a className={button._button_button_primary} href="#contacts">
           {heroData.button}
         </a>
-        <div className={styles.hero_illustrations}>
+        {/* <div className={styles.hero_illustrations}>
           <img src="/logo-outline.svg" alt="" className={styles.hero_logo} />
           <img src="/hero.png" alt="Johannes" className={styles.hero_image} />
           <div className={styles.hero_status}>{heroData.status}</div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

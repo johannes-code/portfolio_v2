@@ -8,7 +8,7 @@ export const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.logoContainer}>
-          <img className={styles.logoImage} src="/logo.svg" alt="logo" />
+          {/* <img className={styles.logoImage} src="/logo.svg" alt="logo" /> */}
         </div>
 
         <div className={styles.centerContent}>
