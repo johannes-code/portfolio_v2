@@ -1,5 +1,5 @@
 .header {
-  position: right;
+  position: center;
   padding-top: 32px;
   padding-bottom: 8px;
 }
@@ -11,6 +11,7 @@ header div.innerHeader {
 
 header ul.navItems {
   display: flex;
+  gap: 4rem;
 }
 
 header a::before {
