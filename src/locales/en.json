@@ -292,13 +292,62 @@
             "content": "To gain practical experience with React development and deployment, and to learn how to work in team"
           }
         ]
+      },
+      {
+        "name": "Companyinformation",
+        "tech": ["programming.5", "other.0,1,5,6","tool.0,4", "database.1", "framework.0"],
+        "description": "Relaxed memorygame with highscorelist",
+        "link": "https://remember-this.vercel.app/",
+        "screenshot": "/screenshots/companyInformation.png",
+        "long_desc": [
+          {
+            "heading": "Background",
+            "content": "Wanted to have a fun little project to do in between other projects"
+          },
+        
+          {
+            "heading": "Version",
+            "content": "This is version 1.0, its working, but could use better design."
+          }
+        ],
+        "learned": [
+          {
+            "heading": "Challenges",
+            "content": "Started out as a -just want to do anything else, project, wanted to have a highscorelist, and wanted people to be able to compete, then it developed into something bigger, as it progressed i  saw that next.js would be a better solution"
+          },
+          {
+            "heading": "Key Takeaways",
+            "content": "I liked this project, but in between I got really stucked, I have gotten valuable experience on how a project can start small and end up bigger than intended "
+          }
+        ],
+        "missed": [
+          {
+            "heading": "Testing",
+            "content": "I went through a lot of testing, and when I decided to implement zustand to tidy up the react states I ended up breaking everything, before fixing it"
+          },
+          {
+            "heading": "Responsive Design",
+            "content": "Will say that this project is somewhat Semi-responsive, even that this has not beeing one of my main focuses"
+          }
+        ],
+        "why": [
+          {
+            "heading": "Purpose",
+            "content": "This project had the purpose of giving me the opportunity to learn, while working on something on my own, I think that this was a steep learning curve, zustand, more advanced next.js, more react. among other."
+          },
+          {
+            "heading": "Learning Goals",
+            "content": "I went into this project thinking that it was going to be an thing to do while some of the other projects where on pause, well this ended up being one of the main projects, and got bigger than intended. But im glad it did, interacting with database, using react with zustand, and next.js was educational, and a great learning experience"
+          }
+        ]
       }
     ],
+    
   "skill": {
     "programming": ["Python", "C", "C#", "C++", "Java", "JavaScript"],
     "tool": ["VScode", "Nano", "Vim", "GitHub"],
-    "other": ["Html", "Css", "Sass", "Scss", "Tailwind", "React"],
-    "database": ["mySQL"],
+    "other": ["Html", "Css", "Sass", "Scss", "Tailwind", "React", "Zustand"],
+    "database": ["mySQL", "MongoDB"],
     "framework": ["Next.js"]
   },
   "contactinfo": {
