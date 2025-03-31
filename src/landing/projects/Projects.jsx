@@ -29,7 +29,7 @@ export const Projects = () => {
               />
 
               {/* 2. Project Name */}
-              <h3>{project.name}</h3>
+              <h3 className={styles.h3}>{project.name}</h3>
 
               {/* 3. Tech Used (Skills) */}
               <ul className={styles.project_techs}>

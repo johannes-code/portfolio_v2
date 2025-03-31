@@ -37,7 +37,7 @@
 }
 
 .contacts__description {
-  color: var(--gray);
+  color: var(--white);
   max-width: 600px;
 }
 
@@ -58,7 +58,7 @@
 .contact {
   display: flex;
   gap: 8px;
-  color: var(--gray);
+  color: var(--white);
   align-items: center;
   margin-top: 8px;
 }
