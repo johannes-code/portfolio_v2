@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export const Projects = () => {
   window.scrollTo(0, 0);
   const projectPageData = data.pages.home.projects;
-  const projectData = data.projectsExpanded;
+  const projectData = data.projectsExpanded.slice(-3).reverse();
   const skillData = data.skill;
 
   return (

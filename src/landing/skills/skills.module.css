@@ -48,9 +48,13 @@
 }
 
 .skill-block {
-  display: inline-block;
+  /* display: inline-block;
   max-width: 300px;
-  min-width: 200px;
+  min-width: 200px; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1rem;
 }
 
 .skill_block_name {
@@ -64,8 +68,6 @@
 
 .skill_block_list {
   padding: 8px;
-  display: flex;
-  flex-wrap: wrap;
   gap: 8px;
   justify-content: start;
   align-items: start;

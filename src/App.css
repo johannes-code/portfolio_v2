@@ -47,8 +47,6 @@ body {
   font-size: 36px;
   font-weight: 500;
   position: relative;
-  float: none;
-  clear: both;
   display: inline-block;
 }
 
