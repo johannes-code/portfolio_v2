@@ -294,11 +294,11 @@
         ]
       },
       {
-        "name": "Companyinformation",
+        "name": "Remember This",
         "tech": ["programming.5", "other.0,1,5,6","tool.0,4", "database.1", "framework.0"],
         "description": "Relaxed memorygame with highscorelist",
         "link": "https://remember-this.vercel.app/",
-        "screenshot": "/screenshots/companyInformation.png",
+        "screenshot": "/screenshots/memoryGame.png",
         "long_desc": [
           {
             "heading": "Background",
