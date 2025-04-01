@@ -27,7 +27,7 @@ export const Contact = () => {
 
             {/* Email Contact */}
             <a className={styles.contact} href="mailto:johannes@gjeset.no">
-              <img src={data.mediaIcon.email} alt="Email Icon" />
+              <img src={data.mediaIcon.mail} alt="Email Icon" />
               <div className={styles.contact__name}>
                 {data.contactinfo.mail}
               </div>

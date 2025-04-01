@@ -56,10 +56,14 @@
   aspect-ratio: 1;
 }
 
-img,
+.footer img,
 picture {
   max-width: 100%;
   height: auto;
+}
+
+.footer img:hover {
+  transform: scale(1.5);
 }
 
 a {

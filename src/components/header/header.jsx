@@ -1,6 +1,6 @@
 import data from "/src/locales/en.json";
 import styles from "./header.module.css";
-import { MediaHeader } from "./MediaHeader";
+import { MediaHeader } from "./MediaHeader/MediaHeader";
 import { Link } from "react-router-dom";
 
 export const Header = () => {

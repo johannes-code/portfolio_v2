@@ -39,7 +39,6 @@
 
 .projects_header {
   display: flex;
-  /* justify-content: space-between; */
   align-items: start;
   flex-direction: column;
   margin-bottom: 48px;
@@ -57,7 +56,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   margin-top: 48px;
-  height: 480px;
+  /* height: 480px; */
 }
 
 .project {

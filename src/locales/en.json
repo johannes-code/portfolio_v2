@@ -1,6 +1,6 @@
 {
   "header": [
-    { "name": "Home", "url": "/" },
+    { "name": "Home", "url": "#/" },
     { "name": "Projects", "url": "#projects" },
     { "name": "About-me", "url": "#about-me" },
     { "name": "Contacts", "url": "#contacts" }
@@ -145,6 +145,7 @@
   },
   "projectsExpanded": [
       {
+        "id": "1",
         "name": "portfolio",
         "tech": ["programming.5", "other.0,1,5", "tool.0,3"],
         "description": "Personal portfolio",
@@ -198,6 +199,7 @@
         ]
       },
       {
+        "id": "2",
         "name": "next_planets",
         "tech": ["programming.5", "other.0,1,4,5", "tool.0,3","framework.0"],
         "description": "Using internal database and display data in next.js",
@@ -246,6 +248,7 @@
         ]
       },
       {
+        "id": "3",
         "name": "Company information",
         "tech": ["programming.5", "other.0,1,5","tool.0,3"],
         "description": "Group project, use API to find company information",
@@ -294,9 +297,10 @@
         ]
       },
       {
+        "id": "4",
         "name": "Remember This",
         "tech": ["programming.5", "other.0,1,5,6","tool.0,4", "database.1", "framework.0"],
-        "description": "Relaxed memorygame with highscorelist",
+        "description": "Relaxing memorygame with highscorelist",
         "link": "https://remember-this.vercel.app/",
         "screenshot": "/screenshots/memoryGame.png",
         "long_desc": [
@@ -346,9 +350,9 @@
   "skill": {
     "programming": ["Python", "C", "C#", "C++", "Java", "JavaScript"],
     "tool": ["VScode", "Nano", "Vim", "GitHub"],
-    "other": ["Html", "Css", "Sass", "Scss", "Tailwind", "React", "Zustand"],
     "database": ["mySQL", "MongoDB"],
-    "framework": ["Next.js"]
+    "framework": ["Next.js"],
+    "other": ["Html", "Css", "Sass", "Scss", "Tailwind", "React", "Zustand"]
   },
   "contactinfo": {
     "name": "Johannes",
@@ -364,7 +368,7 @@
   "mediaIcon": {
     "discord": "/icons/discord.svg",
     "dribble": "/icons/dribble.svg",
-    "email": "/icons/email.svg",
+    "mail": "/icons/email.svg",
     "figma": "/icons/figma.svg",
     "github": "/icons/github.svg",
     "linkedin": "/icons/linkedin.svg",

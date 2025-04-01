@@ -14,9 +14,22 @@ header ul.navItems {
   gap: 4rem;
 }
 
+header a {
+  position: relative;
+}
+
 header a::before {
   content: "#";
   color: var(--primary);
+  position: absolute;
+  opacity: 1;
+  left: -1rem;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+header a:hover::before {
+  transform: translateX(-100%);
+  opacity: 0;
 }
 
 .logoImage {

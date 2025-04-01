@@ -3,11 +3,11 @@ import styles from "./projects.module.css";
 import button from "../../components/button/button.module.css";
 import { Link } from "react-router-dom";
 
-export const Projects = () => {
+export const AllProjects = () => {
   window.scrollTo(0, 0);
   const projectPageData = data.pages.home.projects;
   const allProjects = data.projectsExpanded;
-  const projectData = allProjects.filter((project) => project.id < 4);
+  const projectData = allProjects;
   const skillData = data.skill;
 
   return (
