@@ -31,6 +31,10 @@
   font-size: 24px;
 }
 
+.about_expanded_h4 {
+  color: var(--primary);
+}
+
 .AboutExpandedSection {
   padding-bottom: 20px;
 }

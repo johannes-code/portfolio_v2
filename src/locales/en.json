@@ -356,10 +356,10 @@
   },
   "contactinfo": {
     "name": "Johannes",
-    "mail": "Johannes@gjeset.no",
+    "mail": "mailto:johannes@gjeset.no",
     "github": "https://github.com/johannes-code",
     "linkedin": "https://www.linkedin.com/in/johannes-gjeset/",
-    "discord": "scrapjo"
+    "discord": "discordapp.com/users/scrapjo"
   },
   "Copyright": {
     "copy": "©",
