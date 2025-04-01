@@ -1,19 +1,17 @@
-.h2 {
+h2 {
   font-size: 32px;
   font-weight: 500;
   position: relative;
   display: inline-block;
-  padding-bottom: 24px;
 }
 
-.h2::before {
+h2::before {
   content: "#";
   color: var(--primary);
 }
 
-.h2::after {
+h2::after {
   content: "";
-  display: block;
   width: 10vw;
   height: 1px;
   background-color: var(--primary);
@@ -22,10 +20,15 @@
   right: -16px;
   top: 50%;
 }
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-h4 {
+.projectsExpanded_h4 {
   font-size: 20px;
   text-decoration: underline;
+  color: var(--primary);
 }
 
 ul {
@@ -34,34 +37,41 @@ ul {
   justify-content: space-between;
 }
 
-.currentProjectContainer {
-  padding-bottom: 10px;
-}
-.techSkillsContainer {
-  padding: 10px;
-  padding-left: 6px;
+.projectsExpanded_container {
+  width: 80%;
+  gap: 30px;
 }
 
 .projectExpanded_description {
-  color: var(--gray);
+  color: var(--white);
   padding: 0px;
-}
-
-.projectsExpanded_content {
-  padding: 0px;
-  padding-left: 2px;
-  font-weight: 400;
-}
-
-.projectsExpanded_h4 {
-  padding: 0px;
-  padding-top: 10px;
 }
 
 .projectsExpanded_cover {
-  max-width: 80%;
   display: flex;
 
-  padding-top: 14px;
-  padding-bottom: 14px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.projectsExpanded_content {
+  padding: 10px;
+  font-weight: 400;
+  gap: 24px;
+}
+.ProjectsExpanded_purpose {
+  padding: 0px;
+}
+
+.projectsExpanded p {
+  padding: left 4px;
+  margin-top: 20px;
+}
+
+.currentProjectContainer {
+  padding-top: 20px;
+}
+
+.projectExpanded div > * {
+  margin-bottom: 24px;
 }

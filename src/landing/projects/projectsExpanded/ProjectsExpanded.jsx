@@ -34,10 +34,6 @@ export const ProjectsExpanded = () => {
         <p className={styles.ProjectsExpanded_purpose}>
           <b>URL:</b>
           <Link to={currentProject.link}>{currentProject.link}</Link>
-
-          <p className={styles.projectExpanded_description}>
-            {currentProject.description}
-          </p>
         </p>
         <div className={styles.currentProjectContainer}>
           {currentProject.long_desc &&
