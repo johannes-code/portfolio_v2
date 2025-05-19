@@ -344,8 +344,58 @@
             "content": "I went into this project thinking that it was going to be an thing to do while some of the other projects where on pause, well this ended up being one of the main projects, and got bigger than intended. But im glad it did, interacting with database, using react with zustand, and next.js was educational, and a great learning experience"
           }
         ]
+      },
+       {
+        "id": "5",
+        "name": "Todolist",
+        "tech": ["programming.5", "other.0,1,4","tool.0,4", "database.1", "framework.0"],
+        "description": "Simple encrypted todolist",
+        "link": "todolist-five-jet.vercel.app",
+        "screenshot": "/screenshots/todolist.png",
+        "long_desc": [
+          {
+            "heading": "Background",
+            "content": "My take on the todolistproject, wanted to learn more about encryption, and security"
+          },
+        
+          {
+            "heading": "Version",
+            "content": "This is version 1.0, it has all the functions that i wanted, easy and sleek design."
+          }
+        ],
+        "learned": [
+          {
+            "heading": "Challenges",
+            "content": "I started out by using userId as a key, but I had to make encryption more secure, the userId is much more easier to guess, when i went to change this i had to go through much of the code, and change it."
+          },
+          {
+            "heading": "Key Takeaways",
+            "content": "It started up as a fun idea, and i liked working with encryption, and security, it made me scrach my head and think, It was a demanding project. It also thought me some of the basic wording used in and around, when you work with encryption." 
+          }
+        ],
+        "missed": [
+          {
+            "heading": "Testing",
+            "content": "This project went through a lot of testing, I had to test the encryption, and the data flow, and how it was stored in the database"
+          },
+          {
+            "heading": "Responsive Design",
+            "content": "Will say that this project is somewhat Semi-responsive, even that this has not beeing one of my main focuses"
+          }
+        ],
+        "why": [
+          {
+            "heading": "Purpose",
+            "content": "The todolist project is a very well known project, i wantet to use it with encryption, to have the idea to learn more about encryption."
+          },
+          {
+            "heading": "Learning Goals",
+            "content": "To implement encryption, to learn more about how it works and how to use, it can be used."
+          }
+        ]
       }
     ],
+    
     
   "skill": {
     "programming": ["Python", "C", "C#", "C++", "Java", "JavaScript"],
