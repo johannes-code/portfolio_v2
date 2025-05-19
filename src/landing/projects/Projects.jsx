@@ -7,7 +7,8 @@ export const Projects = () => {
   window.scrollTo(0, 0);
   const projectPageData = data.pages.home.projects;
   const allProjects = data.projectsExpanded;
-  const projectData = allProjects.filter((project) => project.id < 4);
+  const projectData = allProjects.sort((a, b) => b.id - a.id).slice(0, 3);
+
   const skillData = data.skill;
 
   return (
