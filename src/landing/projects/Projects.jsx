@@ -1,28 +1,49 @@
-import data from "/src/locales/en.json";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import styles from "./projects.module.css";
 import button from "../../components/button/button.module.css";
-import { Link } from "react-router-dom";
+import { getProjects } from "../../lib/api";
 
 export const Projects = () => {
   window.scrollTo(0, 0);
-  const projectPageData = data.pages.home.projects;
-  const allProjects = data.projectsExpanded;
-  const projectData = allProjects.sort((a, b) => b.id - a.id).slice(0, 3);
+  const [projectData, setProjectData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const skillData = data.skill;
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const allProjects = await getProjects();
+        const sortedProjects = allProjects
+          .sort((a, b) => a.order - b.order)
+          .slice(0, 3);
+        setProjectData(sortedProjects);
+        setLoading(false);
+      } catch (err) {
+        console.error("Error fetching projects:", err);
+        setError("Failed to load projects", err);
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+  if (loading) return <div>Loading projects...</div>;
+  if (error) return <div>{error}</div>;
 
   return (
     <section className={styles.projects} id="projects">
       <div>
         <div className={styles.projects_header}>
-          <h2 className={styles.h2}>{projectPageData.title}</h2>
+          <h2 className={styles.h2}>Projects</h2>
           <Link className={styles.projects_link} to="/project/">
-            {projectPageData.button}
+            View All
           </Link>
         </div>
         <div className={styles.project_list}>
-          {projectData.map((project, projectIndex) => (
-            <div key={project.name + projectIndex} className={styles.project}>
+          {projectData.map((project) => (
+            <div key={project.id} className={styles.project}>
               {/* 1. Picture */}
               <img
                 src={project.screenshot}
@@ -35,43 +56,17 @@ export const Projects = () => {
 
               {/* 3. Tech Used (Skills) */}
               <ul className={styles.project_techs}>
-                {project.tech && project.tech.length > 0 ? (
-                  project.tech.map((techItem, techIndex) => {
-                    if (
-                      typeof techItem !== "string" ||
-                      !techItem.includes(".")
-                    ) {
-                      console.error("Invalid tech item:", techItem);
-                      return null;
-                    }
-
-                    const [category, indices] = techItem.split(".");
-                    if (!skillData[category]) {
-                      console.error("Invalid category:", category);
-                      return null;
-                    }
-
-                    const indexArray = indices.split(",");
-
-                    return indexArray.map((index, skillIndex) => {
-                      const skill = skillData[category][index];
-                      if (!skill) {
-                        console.error(`Invalid skill at ${category}[${index}]`);
-                        return null;
-                      }
-
-                      return (
-                        <li
-                          key={`${skill}-${techIndex}-${skillIndex}`}
-                          className={styles.project_tech}
-                        >
-                          {skill}
-                        </li>
-                      );
-                    });
-                  })
+                {project.technologies && project.technologies.length > 0 ? (
+                  project.technologies.map((tech, index) => (
+                    <li
+                      key={`${tech}-${index}`}
+                      className={styles.project_tech}
+                    >
+                      {tech}
+                    </li>
+                  ))
                 ) : (
-                  <li>No skills listed</li>
+                  <li>No technologies listed</li>
                 )}
               </ul>
 
@@ -80,7 +75,7 @@ export const Projects = () => {
 
               {/* 5. Button/Link */}
               <Link
-                to={`/project/${projectIndex}`}
+                to={`/project/${project._id}`}
                 className={button._button_button_primary}
               >
                 View project

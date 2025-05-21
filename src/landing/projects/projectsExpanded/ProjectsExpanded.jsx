@@ -1,77 +1,109 @@
 import { useParams, Link } from "react-router-dom";
 import styles from "./projectsExpanded.module.css";
-import data from "../../../locales/en.json";
-import { TechSkills } from "../../../components/functions/TechSkills";
+import buttonStyles from "../../../components/button/button.module.css";
+import { useState, useEffect } from "react";
+import { getProjectById } from "../../../lib/api";
 
 export const ProjectsExpanded = () => {
   window.scrollTo(0, 0);
-
   const { id } = useParams();
-  const projectIndex = parseInt(id, 10);
-  const currentProject = data?.projectsExpanded[projectIndex];
 
-  if (!currentProject) {
-    return <div>No project data available.</div>;
-  }
+  const [project, setProject] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProject = async () => {
+      try {
+        const data = await getProjectById(id);
+        setProject(data);
+        setLoading(false);
+      } catch (err) {
+        console.error("Error fetching project:", err);
+        setError("Failed to load projectdetails");
+        setLoading(false);
+      }
+    };
+
+    fetchProject();
+  }, [id]);
+
+  if (loading) return <div>Loading project details...</div>;
+  if (error) return <div>{error}</div>;
+  if (!project) return <div>No project data available.</div>;
 
   return (
     <div className={styles.projectsExpanded_container}>
       <div>
-        <h2 className={styles.h2}>{currentProject.name}</h2>
+        <h2 className={styles.h2}>{project.name}</h2>
         <div className={styles.techSkillsContainer}>
-          <TechSkills
-            tech={currentProject.tech}
-            ulClassName={styles.projectExpanded_techs}
-            liClassName={styles.projectExpanded_tech}
-          />
+          <ul className={styles.projectExpanded_techs}>
+            {project.technologies &&
+              project.technologies.map((tech, index) => (
+                <li
+                  key={`${tech}-${index}`}
+                  className={styles.projectExpanded_tech}
+                >
+                  {tech}
+                </li>
+              ))}
+          </ul>
         </div>
 
         <img
-          src={currentProject.screenshot}
-          alt={currentProject.name}
+          src={project.screenshot}
+          alt={project.name}
           className={styles.projectsExpanded_cover}
         />
         <p className={styles.ProjectsExpanded_purpose}>
           <b>URL:</b>
-          <Link to={currentProject.link}>{currentProject.link}</Link>
+          <a href={project.link} target="_blank" rel="noopener noreferrer">
+            {project.link}
+          </a>
         </p>
+
         <div className={styles.currentProjectContainer}>
-          {currentProject.long_desc &&
-            currentProject.long_desc.map((item, index) => (
-              <div key={index}>
+          {project.long_desc &&
+            project.long_desc.map((item) => (
+              <div key={item._key}>
                 <h4 className={styles.projectsExpanded_h4}>{item.heading}</h4>
                 <p className={styles.projectsExpanded_content}>
                   {item.content}
                 </p>
               </div>
             ))}
-          {currentProject.learned &&
-            currentProject.learned.map((item, index) => (
-              <div key={index}>
+          {project.learned &&
+            project.learned.map((item) => (
+              <div key={item._key}>
                 <h4 className={styles.projectsExpanded_h4}>{item.heading}</h4>
                 <p className={styles.projectsExpanded_content}>
                   {item.content}
                 </p>
               </div>
             ))}
-          {currentProject.missed &&
-            currentProject.missed.map((item, index) => (
-              <div key={index}>
+          {project.missed &&
+            project.missed.map((item) => (
+              <div key={item._key}>
                 <h4 className={styles.projectsExpanded_h4}>{item.heading}</h4>
                 <p className={styles.projectsExpanded_content}>
                   {item.content}
                 </p>
               </div>
             ))}
-          {currentProject.why &&
-            currentProject.why.map((item, index) => (
-              <div key={index}>
+          {project.why &&
+            project.why.map((item) => (
+              <div key={item._key}>
                 <h4 className={styles.projectsExpanded_h4}>{item.heading}</h4>
                 <p className={styles.projectsExpanded_content}>
                   {item.content}
                 </p>
               </div>
             ))}
+        </div>
+        <div>
+          <Link to="/project" className={buttonStyles._button_button_primary}>
+            Back to Projects
+          </Link>
         </div>
       </div>
     </div>
