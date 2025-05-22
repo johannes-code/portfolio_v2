@@ -78,7 +78,7 @@ export const Projects = () => {
 
               {/* 5. Button/Link */}
               <Link
-                to={`/project/${project._id}`}
+                to={`/project/${project.name}`}
                 className={button._button_button_primary}
               >
                 View project

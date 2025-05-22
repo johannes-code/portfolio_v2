@@ -2,11 +2,12 @@ import { useParams, Link } from "react-router-dom";
 import styles from "./projectsExpanded.module.css";
 import buttonStyles from "../../../components/button/button.module.css";
 import { useState, useEffect } from "react";
-import { getProjectById } from "../../../lib/api";
+import { getProjectByName } from "../../../lib/api";
 
 export const ProjectsExpanded = () => {
   window.scrollTo(0, 0);
-  const { id } = useParams();
+  const { name } = useParams();
+  console.log(name);
 
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -15,7 +16,7 @@ export const ProjectsExpanded = () => {
   useEffect(() => {
     const fetchProject = async () => {
       try {
-        const data = await getProjectById(id);
+        const data = await getProjectByName(name);
         setProject(data);
         setLoading(false);
       } catch (err) {
@@ -26,7 +27,7 @@ export const ProjectsExpanded = () => {
     };
 
     fetchProject();
-  }, [id]);
+  }, [name]);
 
   if (loading) return <div>Loading project details...</div>;
   if (error) return <div>{error}</div>;

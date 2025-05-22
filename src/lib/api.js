@@ -6,6 +6,7 @@ export async function getProjects() {
     *[_type == "project"] | order(order asc) {
       _id,
       name,
+      "slug": slug.current,
       description,
       "coverPhoto": coverPhoto.asset->url,
       "technologies": technologies[]->name,
@@ -15,12 +16,13 @@ export async function getProjects() {
 }
 
 // single project by ID
-export async function getProjectById(id) {
+export async function getProjectByName(name) {
   return client.fetch(
     `
-    *[_type == "project" && _id == $id][0] {
+    *[_type == "project" && name == $name][0] {
       _id,
       name,
+      "slug": slug.current,
       description,
       link,
       github,
@@ -34,6 +36,6 @@ export async function getProjectById(id) {
       tags
     }
   `,
-    { id }
+    { name }
   );
 }
