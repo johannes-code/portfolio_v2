@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./projects.module.css";
 import button from "../../components/button/button.module.css";
 import { getProjects } from "../../lib/api";
+import { urlFor } from "../../lib/sanity";
 
 export const Projects = () => {
   window.scrollTo(0, 0);
@@ -14,6 +15,7 @@ export const Projects = () => {
     const fetchProjects = async () => {
       try {
         const allProjects = await getProjects();
+        console.log(allProjects);
         const sortedProjects = allProjects
           .sort((a, b) => a.order - b.order)
           .slice(0, 3);
@@ -32,6 +34,8 @@ export const Projects = () => {
   if (loading) return <div>Loading projects...</div>;
   if (error) return <div>{error}</div>;
 
+  console.log(projectData);
+
   return (
     <section className={styles.projects} id="projects">
       <div>
@@ -46,7 +50,7 @@ export const Projects = () => {
             <div key={project.id} className={styles.project}>
               {/* 1. Picture */}
               <img
-                src={project.screenshot}
+                src={project.coverPhoto}
                 alt={project.name}
                 className={styles.project_image}
               />

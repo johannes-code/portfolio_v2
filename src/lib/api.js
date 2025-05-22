@@ -9,13 +9,13 @@ export async function getProjects() {
       description,
       link,
       github,
-      "screenshot": screenshot.asset->url,
+      "coverPhoto": coverPhoto.asset->url,
       long_desc,
       learned,
       missed,
       why,
       "technologies": technologies[]->name,
-      order
+      
     }
   `);
 }
@@ -30,13 +30,14 @@ export async function getProjectById(id) {
       description,
       link,
       github,
+      "coverPhoto": coverPhoto.asset->url,
       "screenshot": screenshot.asset->url,
       long_desc,
       learned,
       missed,
       why,
       "technologies": technologies[]->name,
-      order
+      tags
     }
   `,
     { id }

@@ -51,10 +51,21 @@ export const ProjectsExpanded = () => {
         </div>
 
         <img
-          src={project.screenshot}
+          src={project.coverPhoto}
           alt={project.name}
           className={styles.projectsExpanded_cover}
         />
+        <div className={project.screenshots}>
+          {project.screenshot &&
+            project.screenshot.map((screenshot) => (
+              <img
+                key={screenshot._key}
+                src={screenshot.asset.url}
+                alt={project.name}
+                className={styles.projectsExpanded_screenshot}
+              />
+            ))}
+        </div>
         <p className={styles.ProjectsExpanded_purpose}>
           <b>URL:</b>
           <a href={project.link} target="_blank" rel="noopener noreferrer">
