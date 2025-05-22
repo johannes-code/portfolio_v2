@@ -75,3 +75,38 @@ ul {
 .projectExpanded div > * {
   margin-bottom: 24px;
 }
+
+.screenshots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  gap: auto;
+  margin: 0.5rem 0;
+  justify-content: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projectsExpanded_screenshots {
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.projectsExpanded_screenshots:hover {
+  transform: scale(1.05);
+}
+
+.tags h4 {
+  margin-top: 14px;
+}
+
+.tags {
+  display: flex;
+  justify-content: start;
+  gap: 8px;
+  padding-bottom: 14px;
+  padding-left: 10px;
+}

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import styles from "./projects.module.css";
 import button from "../../components/button/button.module.css";
 import { getProjects } from "../../lib/api";
-import { urlFor } from "../../lib/sanity";
 
 export const Projects = () => {
   window.scrollTo(0, 0);

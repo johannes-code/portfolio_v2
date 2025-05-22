@@ -57,22 +57,29 @@ export const ProjectsExpanded = () => {
         />
         <div className={styles.screenshots}>
           {project.screenshots &&
-            project.screenshots.map((screenshots) => (
+            project.screenshots.map((screenshotUrl, index) => (
               <img
-                key={screenshots._key}
-                src={screenshots.asset.url}
-                alt={project.name}
+                key={index}
+                src={screenshotUrl}
+                alt={`{project.name} screenshot ${index + 1}`}
                 className={styles.projectsExpanded_screenshots}
               />
             ))}
         </div>
-        <p className={styles.ProjectsExpanded_purpose}>
-          <b>URL:</b>
-          <a href={project.link} target="_blank" rel="noopener noreferrer">
-            {project.link}
-          </a>
-        </p>
-
+        <div>
+          <p className={styles.ProjectsExpanded_purpose}>
+            <b>URL:</b>
+            <a href={project.link} target="_blank" rel="noopener noreferrer">
+              {project.link}
+            </a>
+          </p>
+          <p className={styles.ProjectsExpanded_purpose}>
+            <b>Github:</b>
+            <a href={project.github} target="_blank" rel="noopener noreferrer">
+              {project.github}
+            </a>
+          </p>
+        </div>
         <div className={styles.currentProjectContainer}>
           {project.long_desc &&
             project.long_desc.map((item) => (
@@ -110,6 +117,21 @@ export const ProjectsExpanded = () => {
                 </p>
               </div>
             ))}
+        </div>
+
+        <div>
+          <h4 className={styles.projectsExpanded_h4}>Tags</h4>
+          <div className={styles.tags}>
+            {project.tags && project.tags.length > 0 ? (
+              project.tags.map((tags, index) => (
+                <span key={index} className={styles.tag}>
+                  {tags}
+                </span>
+              ))
+            ) : (
+              <span className={styles.tag}>No tags available</span>
+            )}
+          </div>
         </div>
         <div>
           <Link to="/project" className={buttonStyles._button_button_primary}>

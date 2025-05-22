@@ -7,13 +7,7 @@ export async function getProjects() {
       _id,
       name,
       description,
-      link,
-      github,
       "coverPhoto": coverPhoto.asset->url,
-      long_desc,
-      learned,
-      missed,
-      why,
       "technologies": technologies[]->name,
       
     }
@@ -31,7 +25,7 @@ export async function getProjectById(id) {
       link,
       github,
       "coverPhoto": coverPhoto.asset->url,
-      "screenshot": screenshot.asset->url,
+      "screenshots": screenshots[].asset->url,
       long_desc,
       learned,
       missed,
