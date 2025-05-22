@@ -56,13 +56,13 @@ export const ProjectsExpanded = () => {
           className={styles.projectsExpanded_cover}
         />
         <div className={project.screenshots}>
-          {project.screenshot &&
-            project.screenshot.map((screenshot) => (
+          {project.screenshots &&
+            project.screenshots.map((screenshots) => (
               <img
-                key={screenshot._key}
-                src={screenshot.asset.url}
+                key={screenshots._key}
+                src={screenshots.asset.url}
                 alt={project.name}
-                className={styles.projectsExpanded_screenshot}
+                className={styles.projectsExpanded_screenshots}
               />
             ))}
         </div>
