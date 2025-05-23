@@ -39,3 +39,12 @@ export async function getProjectByName(name) {
     { name }
   );
 }
+
+export async function getAllQuotes() {
+  return client.fetch(`
+    *[_type == "quote"] {
+      _id,
+      quote,
+      author
+    }`);
+}

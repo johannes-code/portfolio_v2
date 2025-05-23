@@ -1,24 +1,47 @@
 import styles from "./quote.module.css";
-import data from "/src/locales/en.json";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { getAllQuotes } from "../../lib/api";
 
 export const Quote = () => {
-  const [quoteData, setQuote] = useState({ text: "", author: "" });
+  const [quoteData, setQuote] = useState({ quote: "", author: "" });
+  const [allQuotes, setAllQuotes] = useState([]);
 
   useEffect(() => {
-    getRandomQuote();
+    fetchQuotes();
   }, []);
 
-  const getRandomQuote = () => {
-    // Extract the quotes object from the JSON file
-    const quotes = Object.values(data.quotes);
+  const fetchQuotes = async () => {
+    try {
+      const quotes = await getAllQuotes();
+      setAllQuotes(quotes);
+      if (quotes.length > 0) {
+        getRandomQuote(quotes);
+      }
+    } catch (error) {
+      console.error("Error fetching quotes:", error);
+    }
+  };
+
+  const getRandomQuote = (quotes = allQuotes) => {
+    if (quotes.length === 0) {
+      return;
+    }
+
     const randomIndex = Math.floor(Math.random() * quotes.length);
     setQuote(quotes[randomIndex]);
+
+    const selectedQuote = quotes[randomIndex];
+
+    console.log("Selected quote object:", selectedQuote);
+    console.log("Quote field value:", selectedQuote.quote);
+    console.log("Author field value:", selectedQuote.author);
+
+    setQuote(selectedQuote);
   };
 
   return (
     <figure className={styles.quote}>
-      <blockquote className={styles.quote_text}>{quoteData.text}</blockquote>
+      <blockquote className={styles.quote_text}>{quoteData.quote}</blockquote>
       <figcaption className={styles.quote_author}>
         {quoteData.author}
       </figcaption>
