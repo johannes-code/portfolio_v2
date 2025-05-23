@@ -32,10 +32,6 @@ export const Quote = () => {
 
     const selectedQuote = quotes[randomIndex];
 
-    console.log("Selected quote object:", selectedQuote);
-    console.log("Quote field value:", selectedQuote.quote);
-    console.log("Author field value:", selectedQuote.author);
-
     setQuote(selectedQuote);
   };
 

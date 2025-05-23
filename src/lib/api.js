@@ -48,3 +48,30 @@ export async function getAllQuotes() {
       author
     }`);
 }
+
+export async function getAllSkills() {
+  return client.fetch(`
+    *[_type == "skill"] {
+      _id,
+      name,
+      "category": category->name,
+      "categoryId": category->_id,
+      "logo": logo.asset->url,
+  } | order(category->order asc)     
+      `);
+}
+
+export async function getHeroData() {
+  return client.fetch(`
+    *[_type == "hero"][0] {
+      _id,
+      title,
+      description,
+      buttonText,
+      status,
+      "mainImage": mainImage.asset->url,
+      "secondaryImages": secondaryImages[].asset->url,
+      "logo": logo.asset->url
+    }
+  `);
+}

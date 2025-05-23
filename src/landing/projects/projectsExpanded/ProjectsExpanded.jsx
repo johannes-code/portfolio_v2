@@ -7,7 +7,6 @@ import { getProjectByName } from "../../../lib/api";
 export const ProjectsExpanded = () => {
   window.scrollTo(0, 0);
   const { name } = useParams();
-  console.log(name);
 
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);

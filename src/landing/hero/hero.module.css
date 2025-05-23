@@ -46,14 +46,11 @@ img {
 .hero_status {
   padding: 8px;
   border: 1px solid;
-  border-color: var(--gray);
-  color: var(--gray);
-  margin: 0 auto;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  border-color: var(--primary);
+  width: fit-content;
   top: -1px;
   z-index: 5;
   gap: 8px;
   font-weight: 500;
+  margin-top: 20px;
 }

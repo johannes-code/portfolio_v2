@@ -14,7 +14,6 @@ export const Projects = () => {
     const fetchProjects = async () => {
       try {
         const allProjects = await getProjects();
-        console.log(allProjects);
         const sortedProjects = allProjects
           .sort((a, b) => a.order - b.order)
           .slice(0, 3);
@@ -33,8 +32,6 @@ export const Projects = () => {
   if (loading) return <div>Loading projects...</div>;
   if (error) return <div>{error}</div>;
 
-  console.log(projectData);
-
   return (
     <section className={styles.projects} id="projects">
       <div>
@@ -46,7 +43,7 @@ export const Projects = () => {
         </div>
         <div className={styles.project_list}>
           {projectData.map((project) => (
-            <div key={project.id} className={styles.project}>
+            <div key={project._id} className={styles.project}>
               {/* 1. Picture */}
               <img
                 src={project.coverPhoto}
