@@ -75,3 +75,17 @@ export async function getHeroData() {
     }
   `);
 }
+
+export async function getContactData() {
+  return client.fetch(`
+    *[_type == "contact"][0] {
+      _id,
+      title,
+      email,
+      socials[] {
+        platform,
+        url
+      }
+    }
+  `);
+}

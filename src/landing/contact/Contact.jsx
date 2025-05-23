@@ -1,37 +1,78 @@
+import { useEffect, useState } from "react";
+import { getContactData } from "../../lib/api";
 import styles from "./contact.module.css";
-import data from "../../locales/en.json";
+
+// Import your icons
+import discordIcon from "../../icons/discord.svg"; // adjust paths as needed
+import emailIcon from "../../icons/email.svg";
+import githubIcon from "../../icons/github.svg";
+import linkedinIcon from "../../icons/linkedin.svg";
+import twitterIcon from "../../icons/twitter.svg";
+
+const iconMap = {
+  discord: discordIcon,
+  email: emailIcon,
+  github: githubIcon,
+  linkedin: linkedinIcon,
+  twitter: twitterIcon,
+};
 
 export const Contact = () => {
-  const contacts = data.pages.home.contacts;
+  const [contactData, setContactData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchContactData();
+  }, []);
+
+  const fetchContactData = async () => {
+    try {
+      const data = await getContactData();
+      setContactData(data);
+    } catch (error) {
+      console.error("Error fetching contact data:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!contactData) {
+    return <div>No contact data found</div>;
+  }
 
   return (
     <section className={styles.contacts} id="contacts">
-      <h2 className={styles.h2}>{contacts.title}</h2>
+      <h2 className={styles.h2}>{contactData.title}</h2>
       <div className={styles.contacts__content}>
-        <p className={styles.contacts__description}>{contacts.text}</p>
-
         <div className={styles.contacts__media}>
-          <h3 className={styles.contacts__title}>{contacts.media}</h3>
           <div className={styles.contacts__list}>
-            {/* Discord Contact */}
-            <a
-              className={styles.contact}
-              href="https://discord.com/users/scrapjo"
-            >
-              <img src={data.mediaIcon.discord} alt="Discord Icon" />
-
-              <div className={styles.contact__name}>
-                {data.contactinfo.discord}
-              </div>
-            </a>
-
             {/* Email Contact */}
-            <a className={styles.contact} href="mailto:johannes@gjeset.no">
-              <img src={data.mediaIcon.mail} alt="Email Icon" />
-              <div className={styles.contact__name}>
-                {data.contactinfo.mail}
-              </div>
+            <a className={styles.contact} href={`mailto:${contactData.email}`}>
+              <img src={iconMap.email} alt="Email Icon" />
+              <div className={styles.contact__name}>{contactData.email}</div>
             </a>
+
+            {/* Social Media Links */}
+            {contactData.socials &&
+              contactData.socials.map((social, index) => (
+                <a
+                  key={index}
+                  className={styles.contact}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={iconMap[social.platform]}
+                    alt={`${social.platform} Icon`}
+                  />
+                  <div className={styles.contact__name}>{social.platform}</div>
+                </a>
+              ))}
           </div>
         </div>
       </div>
