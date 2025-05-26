@@ -82,7 +82,6 @@ export async function getContactData() {
       _id,
       title,
       description,
-      email,
       }
   `);
 }
@@ -93,6 +92,8 @@ export async function getSocialLinks() {
         links[] {
         platform,
         url,
+        displayName,
+        showIn,
         "icon": icon.asset->url
         }
       }
