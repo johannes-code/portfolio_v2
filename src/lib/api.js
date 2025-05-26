@@ -81,11 +81,20 @@ export async function getContactData() {
     *[_type == "contact"][0] {
       _id,
       title,
+      description,
       email,
-      socials[] {
-        platform,
-        url
       }
-    }
   `);
 }
+
+export async function getSocialLinks() {
+  return client.fetch(`
+    *[_type == "socialLinks"][0] {
+        links[] {
+        platform,
+        url,
+        "icon": icon.asset->url
+        }
+      }
+    `);
+} 

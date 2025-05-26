@@ -1,36 +1,27 @@
 import { useEffect, useState } from "react";
-import { getContactData } from "../../lib/api";
+import { getContactData, getSocialLinks } from "../../lib/api";
+import { getIcon } from '../../utils/iconMap'
 import styles from "./contact.module.css";
-
-// Import your icons
-import discordIcon from "../../icons/discord.svg"; // adjust paths as needed
-import emailIcon from "../../icons/email.svg";
-import githubIcon from "../../icons/github.svg";
-import linkedinIcon from "../../icons/linkedin.svg";
-import twitterIcon from "../../icons/twitter.svg";
-
-const iconMap = {
-  discord: discordIcon,
-  email: emailIcon,
-  github: githubIcon,
-  linkedin: linkedinIcon,
-  twitter: twitterIcon,
-};
 
 export const Contact = () => {
   const [contactData, setContactData] = useState(null);
+  const [socialLinks, setSocialLinks] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  
   useEffect(() => {
-    fetchContactData();
+    fetchData();
   }, []);
 
-  const fetchContactData = async () => {
+  const fetchData = async () => {
     try {
-      const data = await getContactData();
-      setContactData(data);
+      const [contact, socials] = await Promise.all([
+        getContactData(),
+        getSocialLinks()
+      ]);
+      setContactData(contact);
+      setSocialLinks(socials);
     } catch (error) {
-      console.error("Error fetching contact data:", error);
+      console.error("Error fetching data:", error);
     } finally {
       setLoading(false);
     }
@@ -44,21 +35,32 @@ export const Contact = () => {
     return <div>No contact data found</div>;
   }
 
+  
+  const contactSocials = socialLinks?.links?.filter(link => 
+    link.showIn?.includes('contact')
+  ) || [];
+
   return (
     <section className={styles.contacts} id="contacts">
       <h2 className={styles.h2}>{contactData.title}</h2>
-      <div className={styles.contacts__content}>
-        <div className={styles.contacts__media}>
-          <div className={styles.contacts__list}>
+      <div className={styles.contact__content}>
+        <p className={styles.contact__description}>{contactData.description}</p>
+        
+        <div className={styles.contact__media}>
+          <div className={styles.contact__list}>
+            
             {/* Email Contact */}
             <a className={styles.contact} href={`mailto:${contactData.email}`}>
-              <img src={iconMap.email} alt="Email Icon" />
+              <img src={getIcon('email')} alt="Email Icon"/>
               <div className={styles.contact__name}>{contactData.email}</div>
             </a>
 
-            {/* Social Media Links */}
-            {contactData.socials &&
-              contactData.socials.map((social, index) => (
+            {/* ContactSocials instead of socialLinks.links */}
+            {contactSocials.map((social, index) => {
+              console.log("social platform:", social.platform);
+              console.log("Icon path:", getIcon(social.platform.toLowerCase()));
+              
+              return (
                 <a
                   key={index}
                   className={styles.contact}
@@ -67,12 +69,15 @@ export const Contact = () => {
                   rel="noopener noreferrer"
                 >
                   <img
-                    src={iconMap[social.platform]}
+                    src={getIcon(social.platform.toLowerCase())}
                     alt={`${social.platform} Icon`}
+                    onError={(e) => console.log('Failed to load icon:', social.platform, e.target.src)}
+                    onLoad={() => console.log('Icon loaded:', social.platform)}
                   />
                   <div className={styles.contact__name}>{social.platform}</div>
                 </a>
-              ))}
+              );
+})}
           </div>
         </div>
       </div>
