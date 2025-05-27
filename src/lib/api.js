@@ -98,4 +98,28 @@ export async function getSocialLinks() {
         }
       }
     `);
-} 
+}
+
+export async function getAboutData() {
+  return client.fetch(`
+    *[_type == "about"][0] {
+      _id,
+      title,
+      description,
+      buttonText,
+    }
+  `);
+}
+
+export async function getAboutPageData() {
+  return client.fetch(`
+    *[_type == "aboutPage"][0] {
+      _id,
+      name,
+      sections[] {
+        title,
+        content,
+        },  
+    }
+  `);
+}

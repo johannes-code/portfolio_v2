@@ -1,12 +1,60 @@
+import { useState, useEffect } from "react";
+import {
+  getAboutPageData,
+  getSocialLinks,
+  getAllSkills,
+} from "../../../lib/api";
+import { PortableText } from "@portabletext/react";
 import styles from "./aboutExpanded.module.css";
-import data from "../../../locales/en.json";
-import { SkillsList } from "../../../components/functions/SkillsList";
+import { SkillsDisplay } from "../../../components/SkillsDisplay/SkillsDisplay";
 
 export const AboutExpanded = () => {
-  window.scrollTo(0, 0);
-  const skillData = data.skill;
-  const { AboutExpanded } = data;
-  const { contactinfo } = data;
+  const [aboutData, setAboutData] = useState(null);
+  const [socialLinks, setSocialLinks] = useState(null);
+  const [skillsData, setSkillsData] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const [about, socials, skills] = await Promise.all([
+        getAboutPageData(),
+        getSocialLinks(),
+        getAllSkills(),
+      ]);
+
+      setAboutData(about);
+      setSocialLinks(socials);
+
+      // Transform skills data to grouped format
+      const groupedSkills = skills.reduce((acc, skill) => {
+        const category = skill.category || "Other";
+        if (!acc[category]) {
+          acc[category] = [];
+        }
+        acc[category].push(skill);
+        return acc;
+      }, {});
+
+      setSkillsData(groupedSkills);
+    } catch (error) {
+      console.error("Error fetching about page data:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!aboutData) {
+    return <div>No about data found</div>;
+  }
 
   return (
     <section className={styles.AboutExpandedSection}>
@@ -15,27 +63,22 @@ export const AboutExpanded = () => {
       <div className={styles.AboutExpanded_container}>
         <div className={styles.contactinfo}>
           <h4>name</h4>
-          <p>{contactinfo.name}</p>
-          <h4>mail</h4>
-          <p>{contactinfo.mail}</p>
+          <p>{aboutData.name}</p>
         </div>
 
         <div className={styles.AboutContainer}>
-          <h4 className={styles.about_expanded_h4}>Expertise</h4>
-          <p>{AboutExpanded.expertise}</p>
-          <h4 className={styles.about_expanded_h4}>Achievements</h4>
-          <p>{AboutExpanded.achievments}</p>
-          <h4 className={styles.about_expanded_h4}>Background</h4>
-          <p>{AboutExpanded.background}</p>
-          <h4 className={styles.about_expanded_h4}>Personal Goals</h4>
-          <p>{AboutExpanded.personal_Goals}</p>
-          <h4 className={styles.about_expanded_h4}>Professional Goals</h4>
-          <p>{AboutExpanded.proffesional_Goals}</p>
-          <h4 className={styles.about_expanded_h4}>Personal</h4>
-          <p>{AboutExpanded.personal}</p>
+          {aboutData.sections?.map((section, index) => (
+            <div key={index}>
+              <h4 className={styles.about_expanded_h4}>{section.title}</h4>
+              <div className={styles.portable_text_content}>
+                <PortableText value={section.content} />
+              </div>
+            </div>
+          ))}
         </div>
+
         <div>
-          <SkillsList skillData={skillData} styles={styles} />
+          <SkillsDisplay skillsData={skillsData} styles={styles} />
         </div>
       </div>
     </section>
