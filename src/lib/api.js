@@ -22,7 +22,6 @@ export async function getProjectByName(name) {
     *[_type == "project" && name == $name][0] {
       _id,
       name,
-      "slug": slug.current,
       description,
       link,
       github,
@@ -33,7 +32,7 @@ export async function getProjectByName(name) {
       missed,
       why,
       "technologies": technologies[]->name,
-      tags
+      tags,
     }
   `,
     { name }
@@ -120,6 +119,20 @@ export async function getAboutPageData() {
         title,
         content,
         },  
+    }
+  `);
+}
+
+export async function getHeaderData() {
+  return client.fetch(`
+    *[_type == "header"][0] { 
+    _id,
+    "logo": logo.asset->url,
+    navigationLinks[] {
+      label,
+      url,
+      isExternal
+      }
     }
   `);
 }

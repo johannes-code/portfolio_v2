@@ -110,3 +110,30 @@ ul {
   padding-bottom: 14px;
   padding-left: 10px;
 }
+
+.iframe_container {
+  margin: 2rem 0;
+}
+
+.project_iframe {
+  border: 1px solid var(--gray);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 100%;
+}
+
+.iframe_note {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.iframe_note a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.iframe_note a:hover {
+  text-decoration: underline;
+}

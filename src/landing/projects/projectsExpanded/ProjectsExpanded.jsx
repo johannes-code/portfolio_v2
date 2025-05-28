@@ -55,17 +55,19 @@ export const ProjectsExpanded = () => {
           alt={project.name}
           className={styles.projectsExpanded_cover}
         />
+
         <div className={styles.screenshots}>
           {project.screenshots &&
             project.screenshots.map((screenshotUrl, index) => (
               <img
                 key={index}
                 src={screenshotUrl}
-                alt={`{project.name} screenshot ${index + 1}`}
+                alt={`${project.name} screenshot ${index + 1}`}
                 className={styles.projectsExpanded_screenshots}
               />
             ))}
         </div>
+
         <div>
           <p className={styles.ProjectsExpanded_purpose}>
             <b>URL:</b>
@@ -80,6 +82,7 @@ export const ProjectsExpanded = () => {
             </a>
           </p>
         </div>
+
         <div className={styles.currentProjectContainer}>
           {project.long_desc &&
             project.long_desc.map((item) => (

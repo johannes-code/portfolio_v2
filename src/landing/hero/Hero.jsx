@@ -15,7 +15,6 @@ export const Hero = () => {
     try {
       const data = await getHeroData();
       setHeroData(data);
-      console.log("Hero data:", getHeroData);
     } catch (error) {
       console.error("Error fetching hero data:", error);
     } finally {
