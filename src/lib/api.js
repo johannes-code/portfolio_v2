@@ -42,7 +42,7 @@ export async function getAllQuotes() {
   return client.fetch(`
     *[_type == "quote"] {
       _id,
-      text,
+      "text": quote,
       author
     }
   `);
@@ -53,8 +53,10 @@ export async function getSkillsGrouped() {
     *[_type == "skillCategory"] | order(order asc) {
       _id,
       name,
-      "skills": skills[]->name,
-      order
+      "skills": *[_type == "skill" && references(^._id)] {
+        name,
+        "logo": logo.asset->url
+      },
     }
   `);
 }

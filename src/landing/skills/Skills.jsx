@@ -21,7 +21,14 @@ export const Skills = () => {
               <ul className={styles.skill_block_list}>
                 {category.skills?.map((skill, index) => (
                   <li key={index} className={styles.skill_block_skill}>
-                    {skill}
+                    {skill.logo && (
+                      <img
+                        src={skill.logo}
+                        alt={skill.name}
+                        className={styles.skill_logo}
+                      />
+                    )}
+                    <span>{skill.name}</span>
                   </li>
                 ))}
               </ul>
