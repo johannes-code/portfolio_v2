@@ -155,7 +155,8 @@ export async function getFooterData() {
       _id,
       description,
       copyright,
-      email
+      email,
+      "logo": logo.asset->url
     }
   `);
 }

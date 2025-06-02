@@ -20,7 +20,15 @@ export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        <div className={styles.logoContainer}>{/* Logo if needed */}</div>
+        <div className={styles.logoContainer}>
+          {footerData?.logo && (
+            <img
+              src={footerData.logo}
+              alt="Logo"
+              className={styles.logoImage}
+            />
+          )}
+        </div>
 
         <div className={styles.centerContent}>
           <a
@@ -32,6 +40,11 @@ export const Footer = () => {
           <div className={styles.footer_copyright}>
             {footerData?.copyright} {currentYear}
           </div>
+          {footerData?.description && (
+            <p className={styles.footer_description}>
+              {footerData.description}
+            </p>
+          )}
         </div>
 
         <div className={styles.footer_media}>
@@ -43,6 +56,7 @@ export const Footer = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                title={link.displayName}
               >
                 <img src={link.icon} alt={`${link.platform} Icon`} />
               </a>
