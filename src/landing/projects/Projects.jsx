@@ -1,86 +1,47 @@
-import { useState, useEffect } from "react";
+// landing/projects/Projects.jsx
 import { Link } from "react-router-dom";
+import { getProjects, getProjectsPageData } from "../../lib/api";
+import { useAsyncData } from "../../hooks/useAsyncData";
+import { ProjectCard } from "../../components/ProjectCard/ProjectCard";
 import styles from "./projects.module.css";
-import button from "../../components/button/button.module.css";
-import { getProjects } from "../../lib/api";
 
 export const Projects = () => {
-  window.scrollTo(0, 0);
-  const [projectData, setProjectData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const {
+    data: allProjects,
+    loading: projectsLoading,
+    error: projectsError,
+  } = useAsyncData(getProjects);
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const allProjects = await getProjects();
-        const sortedProjects = allProjects
-          .sort((a, b) => a.order - b.order)
-          .slice(0, 3);
-        setProjectData(sortedProjects);
-        setLoading(false);
-      } catch (err) {
-        console.error("Error fetching projects:", err);
-        setError("Failed to load projects", err);
-        setLoading(false);
-      }
-    };
+  const {
+    data: pageData,
+    loading: pageLoading,
+    error: pageError,
+  } = useAsyncData(getProjectsPageData);
 
-    fetchProjects();
-  }, []);
+  if (projectsLoading || pageLoading) {
+    return <div>Loading projects...</div>;
+  }
 
-  if (loading) return <div>Loading projects...</div>;
-  if (error) return <div>{error}</div>;
+  if (projectsError || pageError) {
+    return <div>{projectsError || pageError}</div>;
+  }
+
+  // Get first 3 projects (sorted by order in Sanity)
+  const displayProjects = allProjects?.slice(0, 3) || [];
 
   return (
     <section className={styles.projects} id="projects">
       <div>
         <div className={styles.projects_header}>
-          <h2 className={styles.h2}>Projects</h2>
+          <h2 className={styles.h2}>{pageData?.title || "Projects"}</h2>
           <Link className={styles.projects_link} to="/project/">
-            View All
+            {pageData?.buttonText || "View All"}
           </Link>
         </div>
+
         <div className={styles.project_list}>
-          {projectData.map((project) => (
-            <div key={project._id} className={styles.project}>
-              {/* 1. Picture */}
-              <img
-                src={project.coverPhoto}
-                alt={project.name}
-                className={styles.project_image}
-              />
-
-              {/* 2. Project Name */}
-              <h3 className={styles.h3}>{project.name}</h3>
-
-              {/* 3. Tech Used (Skills) */}
-              <ul className={styles.project_techs}>
-                {project.technologies && project.technologies.length > 0 ? (
-                  project.technologies.map((tech, index) => (
-                    <li
-                      key={`${tech}-${index}`}
-                      className={styles.project_tech}
-                    >
-                      {tech}
-                    </li>
-                  ))
-                ) : (
-                  <li>No technologies listed</li>
-                )}
-              </ul>
-
-              {/* 4. Description */}
-              <p>{project.description}</p>
-
-              {/* 5. Button/Link */}
-              <Link
-                to={`/project/${project.name}`}
-                className={button._button_button_primary}
-              >
-                View project
-              </Link>
-            </div>
+          {displayProjects.map((project) => (
+            <ProjectCard key={project._id} project={project} compact={true} />
           ))}
         </div>
       </div>

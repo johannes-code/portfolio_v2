@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import {
   getAboutPageData,
   getSocialLinks,
-  getAllSkills,
+  getSkillsGrouped,
 } from "../../../lib/api";
 import { PortableText } from "@portabletext/react";
 import styles from "./aboutExpanded.module.css";
@@ -24,19 +24,14 @@ export const AboutExpanded = () => {
       const [about, socials, skills] = await Promise.all([
         getAboutPageData(),
         getSocialLinks(),
-        getAllSkills(),
+        getSkillsGrouped(), // ✅ Changed from getAllSkills()
       ]);
 
       setAboutData(about);
       setSocialLinks(socials);
 
-      // Transform skills data to grouped format
-      const groupedSkills = skills.reduce((acc, skill) => {
-        const category = skill.category || "Other";
-        if (!acc[category]) {
-          acc[category] = [];
-        }
-        acc[category].push(skill);
+      const groupedSkills = skills.reduce((acc, category) => {
+        acc[category.name] = category.skills;
         return acc;
       }, {});
 

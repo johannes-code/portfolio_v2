@@ -1,0 +1,74 @@
+/* components/ProjectCard/ProjectCard.module.css */
+
+.project {
+  border: 1px solid;
+  border-color: var(--gray);
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.project_image {
+  padding: 4px;
+  border-bottom: 1px solid;
+  border-color: var(--gray);
+  aspect-ratio: 16 / 9;
+  max-width: 100%;
+  display: block;
+}
+
+.h3 {
+  font-weight: 400;
+  font-size: 24px;
+  padding: 8px;
+}
+
+.project_techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px;
+  border-bottom: 2px solid var(--gray);
+  border-top: 2px solid var(--gray);
+  list-style: none;
+  margin: 0;
+}
+
+.project_tech {
+  /* Add your tech tag styling here - you can style these however you want */
+  background-color: var(--gray-op);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--white);
+}
+
+.compact_description {
+  padding: 8px;
+  color: var(--gray);
+  line-height: 1.4;
+}
+
+/* Regular description styling */
+.project p {
+  padding: 8px;
+  color: var(--white);
+  line-height: 1.6;
+}
+
+/* Button styling - make it stick to bottom */
+.project a {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* Hover effects */
+.project:hover {
+  border-color: var(--primary);
+  transition: border-color 0.3s ease;
+}
+
+.project_image:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}

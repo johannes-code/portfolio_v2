@@ -1,48 +1,33 @@
-import { useEffect, useState } from "react";
-import { getAllSkills } from "../../lib/api";
-import { SkillsDisplay } from "../../components/SkillsDisplay/SkillsDisplay";
+// landing/skills/Skills.jsx
 import styles from "./skills.module.css";
+import { getSkillsGrouped } from "../../lib/api";
+import { useAsyncData } from "../../hooks/useAsyncData";
 
 export const Skills = () => {
-  const [skillsData, setSkillsData] = useState({});
-  const [loading, setLoading] = useState(true);
+  const { data: skillsData, loading, error } = useAsyncData(getSkillsGrouped);
 
-  useEffect(() => {
-    fetchSkills();
-  }, []);
-
-  const fetchSkills = async () => {
-    try {
-      const skills = await getAllSkills();
-
-      // Group skills by category
-      const groupedSkills = skills.reduce((acc, skill) => {
-        const category = skill.category || "Other";
-        if (!acc[category]) {
-          acc[category] = [];
-        }
-        acc[category].push(skill);
-        return acc;
-      }, {});
-
-      setSkillsData(groupedSkills);
-    } catch (error) {
-      console.error("Error fetching skills:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  if (loading) {
-    return <div>Loading skills...</div>;
-  }
+  if (loading) return <div>Loading skills...</div>;
+  if (error) return <div>Failed to load skills</div>;
 
   return (
     <section className={styles.skills}>
       <h2 className={styles.h2}>Skills</h2>
       <div className={styles.skills_content}>
         <div className={styles.skills_illustrations}></div>
-        <SkillsDisplay skillsData={skillsData} styles={styles} />
+        <div className={styles.skills_list}>
+          {skillsData?.map((category) => (
+            <div key={category._id} className={styles.skill_block}>
+              <h3 className={styles.skill_block_name}>{category.name}</h3>
+              <ul className={styles.skill_block_list}>
+                {category.skills?.map((skill, index) => (
+                  <li key={index} className={styles.skill_block_skill}>
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

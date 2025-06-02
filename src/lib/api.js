@@ -10,12 +10,11 @@ export async function getProjects() {
       description,
       "coverPhoto": coverPhoto.asset->url,
       "technologies": technologies[]->name,
-      
+      order
     }
   `);
 }
 
-// single project by ID
 export async function getProjectByName(name) {
   return client.fetch(
     `
@@ -32,7 +31,7 @@ export async function getProjectByName(name) {
       missed,
       why,
       "technologies": technologies[]->name,
-      tags,
+      tags
     }
   `,
     { name }
@@ -43,21 +42,21 @@ export async function getAllQuotes() {
   return client.fetch(`
     *[_type == "quote"] {
       _id,
-      quote,
+      text,
       author
-    }`);
+    }
+  `);
 }
 
-export async function getAllSkills() {
+export async function getSkillsGrouped() {
   return client.fetch(`
-    *[_type == "skill"] {
+    *[_type == "skillCategory"] | order(order asc) {
       _id,
       name,
-      "category": category->name,
-      "categoryId": category->_id,
-      "logo": logo.asset->url,
-  } | order(category->order asc)     
-      `);
+      "skills": skills[]->name,
+      order
+    }
+  `);
 }
 
 export async function getHeroData() {
@@ -80,23 +79,23 @@ export async function getContactData() {
     *[_type == "contact"][0] {
       _id,
       title,
-      description,
-      }
+      description
+    }
   `);
 }
 
 export async function getSocialLinks() {
   return client.fetch(`
     *[_type == "socialLinks"][0] {
-        links[] {
+      links[] {
         platform,
         url,
         displayName,
         showIn,
         "icon": icon.asset->url
-        }
       }
-    `);
+    }
+  `);
 }
 
 export async function getAboutData() {
@@ -105,7 +104,7 @@ export async function getAboutData() {
       _id,
       title,
       description,
-      buttonText,
+      buttonText
     }
   `);
 }
@@ -117,8 +116,8 @@ export async function getAboutPageData() {
       name,
       sections[] {
         title,
-        content,
-        },  
+        content
+      }
     }
   `);
 }
@@ -126,13 +125,40 @@ export async function getAboutPageData() {
 export async function getHeaderData() {
   return client.fetch(`
     *[_type == "header"][0] { 
-    _id,
-    "logo": logo.asset->url,
-    navigationLinks[] {
-      label,
-      url,
-      isExternal
+      _id,
+      "logo": logo.asset->url,
+      navigationLinks[] {
+        label,
+        url,
+        isExternal
       }
     }
   `);
+}
+
+export async function getProjectsPageData() {
+  return client.fetch(`
+    *[_type == "projectsPage"][0] {
+      _id,
+      title,
+      description,
+      buttonText
+    }
+  `);
+}
+
+export async function getFooterData() {
+  return client.fetch(`
+    *[_type == "footer"][0] {
+      _id,
+      description,
+      copyright,
+      email
+    }
+  `);
+}
+
+export async function getRandomQuote() {
+  const quotes = await getAllQuotes();
+  return quotes; // Return all quotes, let the component pick random one
 }

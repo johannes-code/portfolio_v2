@@ -1,80 +1,55 @@
-import { useEffect, useState } from "react";
-import { getContactData, getSocialLinks } from "../../lib/api";
-import { getIcon } from '../../utils/iconMap'
+// landing/contact/Contact.jsx
 import styles from "./contact.module.css";
-import { PortableText } from '@portabletext/react';
+import { getContactData, getSocialLinks } from "../../lib/api";
+import { useAsyncData } from "../../hooks/useAsyncData";
+import { PortableText } from "@portabletext/react"; // Add this import if description is rich text
 
 export const Contact = () => {
-  const [contactData, setContactData] = useState(null);
-  const [socialLinks, setSocialLinks] = useState(null);
-  const [loading, setLoading] = useState(true);
-  
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const { data: contactData, loading: contactLoading } =
+    useAsyncData(getContactData);
+  const { data: socialData, loading: socialLoading } =
+    useAsyncData(getSocialLinks);
 
-  const fetchData = async () => {
-    try {
-      const [contact, socials] = await Promise.all([
-        getContactData(),
-        getSocialLinks()
-      ]);
-      setContactData(contact);
-      setSocialLinks(socials);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  if (contactLoading || socialLoading) return <div>Loading contact...</div>;
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!contactData) {
-    return <div>No contact data found</div>;
-  }
-
-  
-  const contactSocials = socialLinks?.links?.filter(link => 
-    link.showIn?.includes('contact')
-  ) || [];
+  // Filter social links for contact section
+  const contactLinks =
+    socialData?.links?.filter((link) => link.showIn?.includes("contact")) || [];
 
   return (
-  <section className={styles.contacts} id="contacts">
-    <h2 className={styles.h2}>{contactData.title}</h2>
-    <div className={styles.contact__content}>
-      <div className={styles.contact__description}>
-        <PortableText value={contactData.description} /> </div>
-      
-      <div className={styles.contact__media}>
-        <div className={styles.contact__list}>
-          {contactSocials.map((contact, index) => {
-            const isEmail = contact.platform.toLowerCase() === 'email';
-            const href = isEmail ? `mailto:${contact.url}` : contact.url;
-            
-            return (
+    <section className={styles.contacts} id="contacts">
+      <h2 className={styles.h2}>{contactData?.title}</h2>
+      <div className={styles.contacts__content}>
+        {/* ✅ Fix: Handle rich text description properly */}
+        <div className={styles.contacts__description}>
+          {contactData?.description &&
+            (Array.isArray(contactData.description) ? (
+              <PortableText value={contactData.description} />
+            ) : (
+              <p>{contactData.description}</p>
+            ))}
+        </div>
+
+        <div className={styles.contacts__media}>
+          <h3 className={styles.contacts__title}>Message me here</h3>
+          <div className={styles.contacts__list}>
+            {contactLinks.map((link) => (
               <a
-                key={index}
+                key={link.platform}
                 className={styles.contact}
-                href={href}
-                target={isEmail ? '_self' : '_blank'}
-                rel={isEmail ? '' : 'noopener noreferrer'}
+                href={link.url}
+                target={link.platform !== "email" ? "_blank" : undefined}
+                rel={
+                  link.platform !== "email" ? "noopener noreferrer" : undefined
+                }
               >
-                <img
-                  src={getIcon(contact.platform.toLowerCase())}
-                  alt={`${contact.platform} Icon`}
-                />
-                <div className={styles.contact__name}>
-                  {contact.displayName || contact.url}
-                </div>
+                <img src={link.icon} alt={`${link.platform} Icon`} />
+                <div className={styles.contact__name}>{link.displayName}</div>
               </a>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-);
-}
+    </section>
+  );
+};
