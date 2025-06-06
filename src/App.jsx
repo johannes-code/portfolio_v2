@@ -20,6 +20,7 @@ function App() {
           <Route path="/about_me" element={<AboutExpanded />} />
         </Routes>
       </div>
+
       <Footer />
     </Router>
   );
