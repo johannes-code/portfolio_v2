@@ -1,37 +1,52 @@
+// landing/contact/Contact.jsx
 import styles from "./contact.module.css";
-import data from "../../locales/en.json";
+import { getContactData, getSocialLinks } from "../../lib/api";
+import { useAsyncData } from "../../hooks/useAsyncData";
+import { PortableText } from "@portabletext/react"; // Add this import if description is rich text
 
 export const Contact = () => {
-  const contacts = data.pages.home.contacts;
+  const { data: contactData, loading: contactLoading } =
+    useAsyncData(getContactData);
+  const { data: socialData, loading: socialLoading } =
+    useAsyncData(getSocialLinks);
+
+  if (contactLoading || socialLoading) return <div>Loading contact...</div>;
+
+  // Filter social links for contact section
+  const contactLinks =
+    socialData?.links?.filter((link) => link.showIn?.includes("contact")) || [];
 
   return (
     <section className={styles.contacts} id="contacts">
-      <h2 className={styles.h2}>{contacts.title}</h2>
+      <h2 className={styles.h2}>{contactData?.title}</h2>
       <div className={styles.contacts__content}>
-        <p className={styles.contacts__description}>{contacts.text}</p>
+        {/* ✅ Fix: Handle rich text description properly */}
+        <div className={styles.contacts__description}>
+          {contactData?.description &&
+            (Array.isArray(contactData.description) ? (
+              <PortableText value={contactData.description} />
+            ) : (
+              <p>{contactData.description}</p>
+            ))}
+        </div>
 
         <div className={styles.contacts__media}>
-          <h3 className={styles.contacts__title}>{contacts.media}</h3>
+          <h3 className={styles.contacts__title}>Message me here</h3>
           <div className={styles.contacts__list}>
-            {/* Discord Contact */}
-            <a
-              className={styles.contact}
-              href="https://discord.com/users/scrapjo"
-            >
-              <img src={data.mediaIcon.discord} alt="Discord Icon" />
-
-              <div className={styles.contact__name}>
-                {data.contactinfo.discord}
-              </div>
-            </a>
-
-            {/* Email Contact */}
-            <a className={styles.contact} href="mailto:johannes@gjeset.no">
-              <img src={data.mediaIcon.mail} alt="Email Icon" />
-              <div className={styles.contact__name}>
-                {data.contactinfo.mail}
-              </div>
-            </a>
+            {contactLinks.map((link) => (
+              <a
+                key={link.platform}
+                className={styles.contact}
+                href={link.url}
+                target={link.platform !== "email" ? "_blank" : undefined}
+                rel={
+                  link.platform !== "email" ? "noopener noreferrer" : undefined
+                }
+              >
+                <img src={link.icon} alt={`${link.platform} Icon`} />
+                <div className={styles.contact__name}>{link.displayName}</div>
+              </a>
+            ))}
           </div>
         </div>
       </div>

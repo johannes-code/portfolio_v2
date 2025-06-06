@@ -1,26 +1,39 @@
-import data from "/src/locales/en.json";
+// landing/hero/Hero.jsx
 import styles from "./hero.module.css";
 import button from "../../components/button/button.module.css";
+import { getHeroData } from "../../lib/api";
+import { useAsyncData } from "../../hooks/useAsyncData";
 
 export const Hero = () => {
-  const heroData = data.pages.home.hero;
+  const { data: heroData, loading, error } = useAsyncData(getHeroData);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Failed to load hero data</div>;
 
   return (
     <section className={styles.hero}>
       <div className={styles.hero_content}>
         <h1
           className={styles.hero_title}
-          dangerouslySetInnerHTML={{ __html: heroData.title }}
+          dangerouslySetInnerHTML={{ __html: heroData?.title }}
         ></h1>
-        <div className={styles.hero_description}>{heroData.description}</div>
+        <div className={styles.hero_description}>{heroData?.description}</div>
         <a className={button._button_button_primary} href="#contacts">
-          {heroData.button}
+          {heroData?.buttonText}
         </a>
-        {/* <div className={styles.hero_illustrations}>
-          <img src="/logo-outline.svg" alt="" className={styles.hero_logo} />
-          <img src="/hero.png" alt="Johannes" className={styles.hero_image} />
-          <div className={styles.hero_status}>{heroData.status}</div>
-        </div> */}
+
+        {heroData?.mainImage && (
+          <div className={styles.hero_illustrations}>
+            <img
+              src={heroData.mainImage}
+              alt="Hero"
+              className={styles.hero_image}
+            />
+            {heroData?.status && (
+              <div className={styles.hero_status}>{heroData.status}</div>
+            )}
+          </div>
+        )}
       </div>
     </section>
   );

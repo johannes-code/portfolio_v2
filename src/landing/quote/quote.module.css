@@ -20,8 +20,8 @@
   top: -32px;
 }
 .quote::after {
-  bottom: -44px;
-  right: 10px;
+  bottom: -60px;
+  right: 0px;
 }
 
 .quote_text {

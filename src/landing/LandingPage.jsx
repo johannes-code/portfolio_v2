@@ -11,10 +11,36 @@ export function LandingPage() {
   const location = useLocation();
 
   useEffect(() => {
+    console.log("LandingPage useEffect - location.hash:", location.hash);
+
     if (location.hash) {
-      const element = document.getElementById(location.hash.slice(1));
+      const elementId = location.hash.slice(1);
+      console.log("Looking for element with ID:", elementId);
+
+      const element = document.getElementById(elementId);
+      console.log("Found element:", element);
+
       if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+        console.log("Scrolling to element:", element);
+
+        // First scroll to top to make the effect more visible
+        window.scrollTo(0, 0);
+
+        // Then scroll to the target element with a slight delay
+        setTimeout(() => {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 100);
+      } else {
+        console.log("Element not found!");
+        // Let's also check what elements with IDs exist
+        const allElementsWithIds = document.querySelectorAll("[id]");
+        console.log(
+          "All elements with IDs:",
+          Array.from(allElementsWithIds).map((el) => el.id)
+        );
       }
     }
   }, [location]);
@@ -23,10 +49,16 @@ export function LandingPage() {
     <div className="container_content">
       <Hero />
       <Quote />
-      <Projects />
+      <div id="projects" style={{ minHeight: "100vh", paddingTop: "2rem" }}>
+        <Projects />
+      </div>
       <Skills />
-      <About />
-      <Contact />
+      <div id="about-me" style={{ minHeight: "100vh", paddingTop: "2rem" }}>
+        <About />
+      </div>
+      <div id="contacts" style={{ minHeight: "100vh", paddingTop: "2rem" }}>
+        <Contact />
+      </div>
     </div>
   );
 }
