@@ -6,7 +6,6 @@ export const client = createClient({
   dataset: import.meta.env.VITE_SANITY_DATASET,
   apiVersion: import.meta.env.VITE_SANITY_API_VERSION,
   useCdn: true,
-  withCredentials: true,
 });
 
 const builder = imageUrlBuilder(client);
