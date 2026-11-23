@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/migrasjonskart", "destination": "https://johannes-code.github.io/migrasjonskart/" },
+    { "source": "/migrasjonskart/:path*", "destination": "https://johannes-code.github.io/migrasjonskart/:path*" }
+  ]
+}
