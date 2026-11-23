@@ -3,6 +3,7 @@
     { "source": "/migrasjonskart", "destination": "/migrasjonskart/", "permanent": false }
   ],
   "rewrites": [
-    { "source": "/migrasjonskart/:path*", "destination": "https://johannes-code.github.io/migrasjonskart/:path*" }
+    { "source": "/migrasjonskart/", "destination": "https://johannes-code.github.io/migrasjonskart/" },
+    { "source": "/migrasjonskart/:path+", "destination": "https://johannes-code.github.io/migrasjonskart/:path*" }
   ]
 }
